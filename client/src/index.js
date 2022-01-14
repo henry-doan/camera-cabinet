@@ -6,13 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { initMiddleware } from 'devise-axios';
 import { BrowserRouter } from 'react-router-dom';
 import AuthProvider from './providers/AuthProvider';
+import KitProvider from './providers/KitProvider';
+
 initMiddleware();
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <KitProvider>
+          <App />
+        </KitProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
