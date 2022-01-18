@@ -9,6 +9,7 @@ import Dash from './components/shared/Dash';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import KitShow from './components/kits/KitShow';
 
+
 const App = () => (
   <>
     <Navbar />
@@ -26,6 +27,7 @@ const App = () => (
         </Routes>
       </>
     </FetchUser>
+
   </>
 )
 
