@@ -8,6 +8,7 @@ import FetchUser from './components/auth/FetchUser';
 import Dash from './components/shared/Dash';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
+
 const App = () => (
   <>
     <Navbar />
@@ -17,6 +18,7 @@ const App = () => (
           <Route path='/' element={<Home />} />
           <Route path='/' element={<ProtectedRoute /> }>
             <Route path='/dash' element={<Dash />} />
+            
           </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
