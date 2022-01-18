@@ -12,19 +12,22 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 const App = () => (
   <>
     <Navbar />
-      <FetchUser>
-        <>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/' element={<ProtectedRoute /> }>
-              <Route path='/dash' element={<Dash />} />
-            </Route>
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/*' element={<Nomatch />} />
-          </Routes>
-        </>
-      </FetchUser>
+
+    <FetchUser>
+      <>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/' element={<ProtectedRoute /> }>
+            <Route path='/dash' element={<Dash />} />
+            
+          </Route>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/*' element={<Nomatch />} />
+        </Routes>
+      </>
+    </FetchUser>
+
   </>
 )
 
