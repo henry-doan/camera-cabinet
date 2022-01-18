@@ -6,13 +6,16 @@ export const KitContext = React.createContext();
 export const KitConsumer = KitContext.Consumer;
 
 const KitProvider = ({ children }) => {
-  const [kits, setKits] = useState = ([])
+  const [kits, setKits] = useState ([])
+
+  const navigate = useNavigate()
 
   const getAllKits = () => {
     axios.get('/api/kits')
       .then( res => setKits(res.data))
       .catch( err => console.log(err))
   }
+
 
 const updateKit = (id, kit) => {
   axios.put(`/api/kits/${id}`, { kit })
@@ -30,15 +33,15 @@ const updateKit = (id, kit) => {
 
 
   return (
-    <>
       <KitContext.Provider value={{
         kits,
         getAllKits: getAllKits,
+
         updateKit: updateKit,
+
       }}>
         { children }
       </KitContext.Provider>
-    </>
   )
 }
 

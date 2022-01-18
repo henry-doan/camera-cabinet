@@ -12,6 +12,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 const App = () => (
   <>
     <Navbar />
+
     <FetchUser>
       <>
         <Routes>
@@ -26,6 +27,7 @@ const App = () => (
         </Routes>
       </>
     </FetchUser>
+
   </>
 )
 

@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { initMiddleware } from 'devise-axios';
 import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { initMiddleware } from 'devise-axios';
 import AuthProvider from './providers/AuthProvider';
 import KitProvider from './providers/KitProvider';
 
