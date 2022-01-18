@@ -51,7 +51,6 @@ return (
       <Games kitId={id} />
     </>
   )
-}
 
 const ConnectedKitShow = (props) => (
   <KitConsumer>
