@@ -8,7 +8,7 @@ import FetchUser from './components/auth/FetchUser';
 import Dash from './components/shared/Dash';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Kits from './components/kit/Kits';
-import KitShow from './components/kits/KitShow';
+import KitShow from './components/kit/KitShow';
 
 
 
