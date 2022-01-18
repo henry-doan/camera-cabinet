@@ -3,13 +3,13 @@ import { AuthConsumer } from '../../providers/AuthProvider';
 
 const Register = ({ handleRegister }) => {
 
-  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '' })
+  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '', fname: '', lname: '' })
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (user.password === user.passwordConfirmation) {
       handleRegister(user)
-      setUser({ email: '', password: '' })
+      setUser({ email: '', password: '', passwordConfirmation: '', fname: '', lname: '' })
     } else {
       alert('Passwords do not match.')
     }
