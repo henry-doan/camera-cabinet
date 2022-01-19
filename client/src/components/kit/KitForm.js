@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEdit}) => {
-  const [kit, setKit] = useState({ name: '', description: '', image: '', })
+  const [kit, setKit] = useState({ name: '', description: '', image: '', item: '' })
  
   // item: '' is a data atr but not sure if we need to include in the form
   useEffect( () => {
@@ -35,7 +35,7 @@ const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEd
         <textarea
           name='Kit Description'
           value={kit.description}
-          onChange={(e) => setKit({ ...kit, desccription: e.target.value })}
+          onChange={(e) => setKit({ ...kit, description: e.target.value })}
           required
         ></textarea>
          <label>Kit Image:</label>
