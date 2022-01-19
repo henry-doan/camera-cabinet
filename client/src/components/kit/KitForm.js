@@ -35,7 +35,7 @@ const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEd
         <textarea
           name='Kit Description'
           value={kit.description}
-          onChange={(e) => setKit({ ...kit, desccription: e.target.value })}
+          onChange={(e) => setKit({ ...kit, description: e.target.value })}
           required
         ></textarea>
          <label>Kit Image:</label>

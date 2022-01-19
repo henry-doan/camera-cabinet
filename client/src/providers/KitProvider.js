@@ -32,6 +32,7 @@ const KitProvider = ({ children }) => {
         return k
       })
       setKits(newUpdatedKits)
+      navigate(`/kits`)
     })
     .catch( err => console.log(err) )
   }
