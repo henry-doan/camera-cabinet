@@ -17,6 +17,11 @@ const Navbar = ({ user, handleLogout }) => {
           <li onClick={ () => handleLogout() }>
             Logout
           </li>
+          <Link to='/kits'>
+            <li>
+              Kits
+            </li>
+          </Link>
         </>
       )
     } else {
