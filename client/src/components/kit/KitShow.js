@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Image, Button } from 'react-bootstrap';
+import KitForm from './components/kit/KitForm';
+import { KitConsumer } from '../../providers/KitProvider'
 
 const KitShow = ({ updateKit, deleteKit }) => {
   const params = useParams();
@@ -12,8 +14,8 @@ const KitShow = ({ updateKit, deleteKit }) => {
     axios.get(`api/kits/${params.kitId}`)
     .then( res => setKit(res.data))
     .catch( err => console.log(err))
-  })
-}
+  }, [])
+
 
 const { name, description, image, item } = kit
 return (
@@ -48,10 +50,9 @@ return (
           </Button>
         </>
       }
-      <Games kitId={id} />
     </>
   )
-
+}
 
 const ConnectedKitShow = (props) => (
   <KitConsumer>
