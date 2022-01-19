@@ -18,7 +18,7 @@ const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEd
     } else {
       addKit(kit)
     }
-    setKit({ name: '', description: '', image: '', })
+    setKit({ name: '', description: '', image: '',item: '' })
   }
 
   return (
