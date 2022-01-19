@@ -14,10 +14,9 @@ const KitShow = ({ updateKit, deleteKit, id }) => {
     axios.get(`api/kits/${params.kitId}`)
     .then( res => setKit(res.data))
     .catch( err => console.log(err))
-  })
+  }, [])
 
-
-const { name, description, image, item } = kit
+const { name, description, image, item } = kit 
 return (
   <>
     { editing ? 
@@ -52,8 +51,8 @@ return (
       }
       {/* <Gears kitId={id} /> */}
     </>
-    )
-  }
+  )
+}
 
 const ConnectedKitShow = (props) => (
   <KitConsumer>
