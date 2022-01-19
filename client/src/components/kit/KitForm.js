@@ -44,6 +44,7 @@ const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEd
           value={kit.image}
           onChange={(e) => setKit({ ...kit, image: e.target.value })}
         />
+        
          {/* <label>Kit Item Count:</label> */}
         <button type="submit">Submit</button>
       </form>
