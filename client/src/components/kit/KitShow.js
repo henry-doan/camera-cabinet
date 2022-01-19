@@ -16,9 +16,9 @@ const KitShow = ({ updateKit, deleteKit, id }) => {
     .catch( err => console.log(err))
   }, [])
 
-    const { name, description, image, item } = kit 
-    return (
-    <>
+const { name, description, image, item } = kit 
+return (
+  <>
     { editing ? 
       <>
         <KitForm 
