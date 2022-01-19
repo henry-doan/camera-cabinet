@@ -10,7 +10,7 @@ class Api::KitsController < ApplicationController
   end
 
   def create
-    @kit = curent_user.kits.new(kit_params)
+    @kit = current_user.kits.new(kit_params)
     if @kit.save
       render json: @kit
     else
