@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_032507) do
+ActiveRecord::Schema.define(version: 2022_01_19_034859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 2022_01_18_032507) do
     t.string "model"
     t.string "condition"
     t.string "make"
-    t.string "type"
     t.string "image"
-    t.integer "serial"
+    t.string "serial"
+    t.bigint "kit_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["kit_id"], name: "index_gears_on_kit_id"
   end
 
   create_table "kits", force: :cascade do |t|
@@ -73,5 +74,6 @@ ActiveRecord::Schema.define(version: 2022_01_18_032507) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "gears", "kits"
   add_foreign_key "kits", "users"
 end
