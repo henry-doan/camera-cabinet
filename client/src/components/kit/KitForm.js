@@ -6,7 +6,7 @@ const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEd
   // item: '' is a data atr but not sure if we need to include in the form
   useEffect( () => {
     if (id) {
-      setKit({ name, description, image })
+      setKit({ name, description, image, item })
     }
   }, [])
 
@@ -18,7 +18,7 @@ const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEd
     } else {
       addKit(kit)
     }
-    setKit({ name: '', description: '', image: '', })
+    setKit({ name: '', description: '', image: '', item: ''})
   }
 
   return (
@@ -44,6 +44,7 @@ const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEd
           value={kit.image}
           onChange={(e) => setKit({ ...kit, image: e.target.value })}
         />
+        
          {/* <label>Kit Item Count:</label> */}
         <button type="submit">Submit</button>
       </form>
