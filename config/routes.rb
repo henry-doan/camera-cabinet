@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   namespace :api do 
     resources :kits do 
-      resources :gears
+      resources :gears do
+        resources :documents
+      end
     end
   end
 
