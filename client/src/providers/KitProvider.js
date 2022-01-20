@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 export const KitContext = React.createContext();
 export const KitConsumer = KitContext.Consumer;
 
-const KitProvider = ({ children }) => {
+const KitProvider = ({ children, id }) => {
   const [kits, setKits] = useState ([])
 
   const navigate = useNavigate()
 
   const getAllKits = () => {
-    axios.get('/api/kits')
+    axios.get('/api/kits/')
       .then( res => setKits(res.data))
       .catch( err => console.log(err))
   }

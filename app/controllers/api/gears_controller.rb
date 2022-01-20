@@ -38,7 +38,7 @@ class Api::GearsController < ApplicationController
     end
 
     def set_kit
-      @kit = kit.find(params[:kit_id])
+      @kit = Kit.find(params[:kit_id])
     end
 
     def set_gear
