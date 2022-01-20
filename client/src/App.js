@@ -25,7 +25,7 @@ const App = () => (
             <Route path='/kits/:kitId' element={<KitShow />} />
              <Route path='/:kitId/gear/:gearId' element={<GearShow />} /> 
              <Route path='/:gearId/document/:documentId' element={<DocumentShow />} />
-          </Route>
+=          </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/*' element={<Nomatch />} />

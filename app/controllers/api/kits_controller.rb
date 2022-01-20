@@ -10,7 +10,7 @@ class Api::KitsController < ApplicationController
   end
 
   def create
-    @kit = curent_user.kits.new(kit_params)
+    @kit = current_user.kits.new(kit_params)
     if @kit.save
       render json: @kit
     else
@@ -32,11 +32,15 @@ class Api::KitsController < ApplicationController
   end
 
   private 
-    def set_kit
-      @kit = current_user.kits.find(params[:id])
-    end
+    # def set_kit
+    #   @kit = current_user.kits.find(params[:id])
+    # end
 
     def kit_params
-      params.require(:kit).permit(:name, :description, :image, :item)
+      params.require(:kit).permit(:name, :description, :image)
+    end
+
+    def set_kit
+      @kit = current_user.kits.find(params[:id])
     end
 end
