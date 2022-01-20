@@ -19,13 +19,15 @@ const Navbar = ({ user, handleLogout }) => {
               Kits
             </li>
           </Link>
+          <Link to='/gears'>
+            <li>
+              Gears
+            </li>
+          </Link>
+          <Link to='/logout'>
           <li onClick={ () => handleLogout() }>
             Logout
           </li>
-          <Link to='/kits'>
-            <li>
-              Kits
-            </li>
           </Link>
         </>
       )
