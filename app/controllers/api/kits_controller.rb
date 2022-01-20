@@ -37,7 +37,7 @@ class Api::KitsController < ApplicationController
     # end
 
     def kit_params
-      params.require(:kit).permit(:name, :description, :image, :item)
+      params.require(:kit).permit(:name, :description, :image)
     end
 
     def set_kit
