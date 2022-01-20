@@ -9,6 +9,8 @@ import Dash from './components/shared/Dash';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Kits from './components/kit/Kits';
 import KitShow from './components/kit/KitShow';
+import Gears from './components/gear/Gears';
+
 
 
 
@@ -23,6 +25,7 @@ const App = () => (
             <Route path='/dash' element={<Dash />} />
             <Route path='/kits' element={<Kits />} />
             <Route path='/kits/:kitId' element={<KitShow />} />
+            <Route path='/gears' element={<Gears />} />
 
             
           </Route>
