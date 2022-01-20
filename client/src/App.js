@@ -9,10 +9,8 @@ import Dash from './components/shared/Dash';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Kits from './components/kit/Kits';
 import KitShow from './components/kit/KitShow';
-import Gears from './components/gear/Gears';
-
-
-
+import GearShow from './components/gear/GearShow';
+import DocumentShow from './components/document/DocumentShow';
 
 const App = () => (
   <>
@@ -23,12 +21,11 @@ const App = () => (
           <Route path='/' element={<Home />} />
           <Route path='/' element={<ProtectedRoute /> }>
             <Route path='/dash' element={<Dash />} />
-            <Route path='/kits' element={<Kits />} />
+             <Route path='kits' element={<Kits />} />
             <Route path='/kits/:kitId' element={<KitShow />} />
-            <Route path='/gears' element={<Gears />} />
-
-            
-          </Route>
+             <Route path='/:kitId/gear/:gearId' element={<GearShow />} /> 
+             <Route path='/:gearId/document/:documentId' element={<DocumentShow />} />
+=          </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/*' element={<Nomatch />} />

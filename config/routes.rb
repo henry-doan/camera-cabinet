@@ -6,7 +6,6 @@ Rails.application.routes.draw do
       resources :gears do
         resources :documents
       end
-    end
   end
-
+  end
 end

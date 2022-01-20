@@ -7,9 +7,9 @@ one:
   model: MyString
   condition: MyString
   make: MyString
-  type: 
   image: MyString
-  serial: 1
+  serial: MyString
+  kit: one
 
 two:
   name: MyString
@@ -18,6 +18,6 @@ two:
   model: MyString
   condition: MyString
   make: MyString
-  type: 
   image: MyString
-  serial: 1
+  serial: MyString
+  kit: two

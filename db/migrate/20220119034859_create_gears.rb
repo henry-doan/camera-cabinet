@@ -7,9 +7,9 @@ class CreateGears < ActiveRecord::Migration[6.1]
       t.string :model
       t.string :condition
       t.string :make
-      t.string :type
       t.string :image
-      t.integer :serial
+      t.string :serial
+      t.belongs_to :kit, null: false, foreign_key: true
 
       t.timestamps
     end
