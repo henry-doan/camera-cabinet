@@ -14,6 +14,13 @@ const Navbar = ({ user, handleLogout }) => {
               Dashboard
             </li>
           </Link>
+
+          <Link to='/logout'>
+            <li onClick={ () => handleLogout() }>
+              Logout
+            </li>
+          </Link>
+
           <Link to='/kits'>
             <li>
               Kits
@@ -29,6 +36,8 @@ const Navbar = ({ user, handleLogout }) => {
             Logout
           </li>
           </Link>
+
+
         </>
       )
     } else {

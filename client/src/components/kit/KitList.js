@@ -8,13 +8,11 @@ const KitList = ({ kits }) => {
             { kits.map( k =>
             <Link to={`/kits/${k.id}`}>
                 <ListGroup.Item>{k.name}</ListGroup.Item>
-                </Link>
-                )}
-  
- 
-</ListGroup>
+            </Link>
+            )}
+        </ListGroup>
         </>
-    )
-}
+    	)
+	}
 
 export default KitList;
