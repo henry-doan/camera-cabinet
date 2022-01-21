@@ -3,12 +3,15 @@ import { GearConsumer } from '../../providers/GearProvider';
 import GearList from './GearList';
 import { Button } from 'react-bootstrap';
 import GearForm from './GearForm';
+import { useParams } from 'react-router-dom';
 
 const Gears = ({ gears, getAllGears, addGear }) => {
-    const [adding, setAdding] = useState(false)
+    const [adding, setAdd] = useState(false)
+
+    const params = useParams()
 
     useEffect( () => {
-        getAllGears()
+        getAllGears(params.kitId)
     }, [])
 
     return (
@@ -16,11 +19,11 @@ const Gears = ({ gears, getAllGears, addGear }) => {
         <h1>Gears</h1>
         { adding ?
             <>
-            <GearForm addGear={addGear} />
-            <Button variant="info" onClick={() => setAdding(false)}>Cancel</Button>    
+            <GearForm addGear={addGear} kitId={params.kitId} setAdd={setAdd}/>
+            <Button variant="info" onClick={() => setAdd(false)}>Cancel</Button>    
             </>
             :
-            <Button variant="info" onClick={() => setAdding(true)}>+</Button>
+            <Button variant="info" onClick={() => setAdd(true)}>+</Button>
         }
         <GearList gears={gears} />
         </>

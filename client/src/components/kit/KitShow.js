@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Image, Button } from 'react-bootstrap';
 import KitForm from './KitForm';
 import { KitConsumer } from '../../providers/KitProvider';
+import Gears from '../gear/Gears'
 
 
 const KitShow = ({ updateKit, deleteKit }) => {
@@ -54,7 +55,7 @@ return (
           </Button>
         </>
       }
-      {/* <Gears kitId={id} /> */}
+      <Gears kitId={id} />
     </>
   )
 }

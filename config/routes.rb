@@ -3,14 +3,16 @@ Rails.application.routes.draw do
 
   namespace :api do 
     resources :kits do 
-
       resources :gears
     end
     
 
       resources :gears do
         resources :documents
+
       end
+      resources :gears, except: [:index, :show, :create, :update, :destroy] do
+        resources :documents
   end
 
   end

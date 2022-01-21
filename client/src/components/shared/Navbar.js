@@ -36,11 +36,8 @@ const Navbar = ({ user, handleLogout }) => {
             Logout
           </li>
           </Link>
-          {/* <Link to='/kits'>
-            <li>
-              Kits
-            </li> */}
-          {/* </Link> */}
+
+
         </>
       )
     } else {

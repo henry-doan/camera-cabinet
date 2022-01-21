@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const GearForm = ({ id, name, desc, price, model, condition, make, image, serial, setEdit, updateGear}) => {
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, rating, serial, setEdit, updateGear, addGear}) => {
   
   const [gear, setGear] = useState({ name: '', desc: '', rating: '', price: '', model: '',
   condition: '', make: '', image: '', serial: ''})
@@ -14,10 +14,11 @@ const GearForm = ({ id, name, desc, price, model, condition, make, image, serial
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-    updateGear(id, gear)
+    updateGear(kitId, id, gear)
     setEdit(false)
   } else {
     addGear(gear)
+    setAdd(false)
   }
     setGear({ name: '', desc: '', rating: 0, price: 0, model: '',
     condition: '', make: '', image: '', serial: ''})
