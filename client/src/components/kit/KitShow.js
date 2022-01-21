@@ -5,7 +5,10 @@ import { Image, Button } from 'react-bootstrap';
 import KitForm from './KitForm';
 import { KitConsumer } from '../../providers/KitProvider';
 
-const KitShow = ({ updateKit, deleteKit}) => {
+
+const KitShow = ({ updateKit, deleteKit }) => {
+
+
   const params = useParams();
   const [kit, setKit] = useState ({ name: '', description: '', image: '', item: ''})
   const [editing, setEdit] = useState(false)
@@ -16,8 +19,10 @@ const KitShow = ({ updateKit, deleteKit}) => {
     .catch( err => console.log(err))
   }, [])
 
-  const { name, description, image, item, id } = kit 
-  return (
+
+const { name, description, image, item, id } = kit 
+return (
+
   <>
     { editing ? 
       <>
@@ -60,4 +65,4 @@ const ConnectedKitShow = (props) => (
   </KitConsumer>
 )
 
-export default ConnectedKitShow;
+export default KitShow;
