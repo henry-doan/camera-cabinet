@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bought: 2022-01-19 18:52:05
+  image: MyString
+  gears: one
+
+two:
+  bought: 2022-01-19 18:52:05
+  image: MyString
+  gears: two

@@ -33,11 +33,15 @@ class Api::KitsController < ApplicationController
   end
 
   private 
-    def set_kit
-      @kit = current_user.kits.find(params[:id])
-    end
+    # def set_kit
+    #   @kit = current_user.kits.find(params[:id])
+    # end
 
     def kit_params
-      params.require(:kit).permit(:name, :description, :image, :item)
+      params.require(:kit).permit(:name, :description, :image)
+    end
+
+    def set_kit
+      @kit = current_user.kits.find(params[:id])
     end
 end
