@@ -1,28 +1,28 @@
 import { useState, useEffect } from 'react';
 
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, rating, serial, setEdit, updateGear, addGear}) => {
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear}) => {
   
-  const [gear, setGear] = useState({ name: '', desc: '', rating: '', price: '', model: '',
+  const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
   condition: '', make: '', image: '', serial: ''})
 
   useEffect( () => {
     if (id) {
-      setGear({ name, desc, rating, price, model, condition, make, image, serial,})
+      setGear({ name, desc, price, model, condition, make, image, serial})
     }
   }, [])
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (id) {
-    updateGear(kitId, id, gear)
-    setEdit(false)
-  } else {
-    addGear(gear)
-    setAdd(false)
-  }
-    setGear({ name: '', desc: '', rating: 0, price: 0, model: '',
-    condition: '', make: '', image: '', serial: ''})
-  }
+      e.preventDefault()
+      if (id) {
+      updateGear(kitId, id, gear)
+      setEdit(false)
+    } else {
+      addGear(kitId, gear)
+      setAdd(false)
+    }
+      setGear({ name: '', desc: '', price: 0, model: '',
+      condition: '', make: '', image: '', serial: ''})
+    }
 
   return (
     <>
@@ -43,14 +43,14 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
           required
           placeholder="Gear Description"
         />
-        <label>Rating:</label>
+        {/* <label>Rating:</label>
         <input 
           name='rating' 
           value={gear.rating}
           onChange={(e) => setGear({...gear, rating: e.target.value})}
           required
           placeholder="Gear Rating"
-        />
+        /> */}
         <label>Price:</label>
         <input 
           name='price' 

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
-const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEdit}) => {
+const KitForm = ({ addKit, id, name, description, image,/* item,  */updateKit, setEdit}) => {
   const [kit, setKit] = useState({ name: '', description: '', image: '' })
  
   // item: '' is a data atr but not sure if we need to include in the form
   useEffect( () => {
     if (id) {
-      setKit({ name, description, image, item })
+    setKit({ name, description, image/*, item */})
     }
   }, [])
 
@@ -18,7 +18,7 @@ const KitForm = ({ addKit, id, name, description, image, item,  updateKit, setEd
     } else {
       addKit(kit)
     }
-    setKit({ name: '', description: '', image: '', item: ''})
+  setKit({ name: '', description: '', image: ''/*, item: ''*/})
   }
 
   return (

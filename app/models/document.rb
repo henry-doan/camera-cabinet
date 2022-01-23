@@ -1,5 +1,5 @@
 class Document < ApplicationRecord
-  belongs_to :gears
+  belongs_to :gear
 
   validates :bought, :image, presence: true
 end

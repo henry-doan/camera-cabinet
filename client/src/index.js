@@ -18,7 +18,7 @@ ReactDOM.render(
       <AuthProvider>
         <KitProvider>
           <GearProvider>
-          <App />
+            <App />
           </GearProvider>
         </KitProvider>
       </AuthProvider>

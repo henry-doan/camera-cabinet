@@ -4,20 +4,20 @@ import axios from 'axios';
 import { Image, Button } from 'react-bootstrap';
 import KitForm from './KitForm';
 import { KitConsumer } from '../../providers/KitProvider';
-import Gears from '../gear/Gears'
+import Gears from '../gear/Gears';
 
 
 const KitShow = ({ updateKit, deleteKit }) => {
 
 
-  const params = useParams();
+  const params = useParams()
   const [kit, setKit] = useState ({ name: '', description: '', image: '', item: ''})
   const [editing, setEdit] = useState(false)
 
   useEffect( () => {
     axios.get(`/api/kits/${params.kitId}`)
-    .then( res => setKit(res.data))
-    .catch( err => console.log(err))
+      .then( res => setKit(res.data))
+      .catch( err => console.log(err))
   }, [])
 
 
@@ -66,4 +66,4 @@ const ConnectedKitShow = (props) => (
   </KitConsumer>
 )
 
-export default KitShow;
+export default ConnectedKitShow;

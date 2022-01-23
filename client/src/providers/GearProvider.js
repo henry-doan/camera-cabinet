@@ -12,7 +12,7 @@ const GearProvider = ({ children }) => {
 
   const getAllGears = (kitId) => {
     axios.get(`/api/kits/${kitId}/gears`)
-      .then ( res => setGears(res.data))
+      .then( res => setGears(res.data))
       .catch( err => console.log(err))
   }
 
@@ -25,7 +25,7 @@ const GearProvider = ({ children }) => {
   const updateGear = (kitId, id, gear) => {
     axios.put(`/api/kits/${kitId}/gears/${id}`, { gear })
       .then ( res => {
-        const newUpdatedGears = gear.map( g => {
+        const newUpdatedGears = gears.map( g => {
           if (g.id === id ) {
             return res.data
           }
@@ -42,7 +42,7 @@ const GearProvider = ({ children }) => {
       .then( res => {
         setGears(gears.filter( g => g.id !== id))
         alert(res.data.message)
-        navigate('/gears')
+        navigate(`/kits/${kitId}`)
       })
       .catch( err => console.log(err))
   }
