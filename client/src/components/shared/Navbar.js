@@ -14,13 +14,6 @@ const Navbar = ({ user, handleLogout }) => {
               Dashboard
             </li>
           </Link>
-
-          <Link to='/logout'>
-            <li onClick={ () => handleLogout() }>
-              Logout
-            </li>
-          </Link>
-
           <Link to='/kits'>
             <li>
               Kits

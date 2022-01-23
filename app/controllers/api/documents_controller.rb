@@ -33,16 +33,16 @@ class Api::DocumentsController < ApplicationController
         end
       
         private
-          def document_params
-            params.require(:document).permit(:bought, :image)
-          end
-      
           def set_gear
-            @gear = gear.find(params[:gear_id])
+            @gear = Gear.find(params[:gear_id])
           end
-      
+
           def set_document
             @document = @gear.documents.find(params[:id])
+          end
+          
+          def document_params
+            params.require(:document).permit(:bought, :image)
           end
       end
 end
