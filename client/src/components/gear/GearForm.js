@@ -1,28 +1,30 @@
 import { useState, useEffect } from 'react';
 
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear}) => {
+
+
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, category, setEdit, updateGear, addGear}) => {
   
-  const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
-  condition: '', make: '', image: '', serial: ''})
+  const [gear, setGear] = useState({ name: '', desc: '', price: '', model: '',
+  condition: '', make: '', image: '', serial: '', category: ''})
 
   useEffect( () => {
     if (id) {
-      setGear({ name, desc, price, model, condition, make, image, serial})
+      setGear({ name, desc, price, model, condition, make, image, serial, category})
     }
   }, [])
 
   const handleSubmit = (e) => {
-      e.preventDefault()
-      if (id) {
-      updateGear(kitId, id, gear)
-      setEdit(false)
-    } else {
-      addGear(kitId, gear)
-      setAdd(false)
-    }
-      setGear({ name: '', desc: '', price: 0, model: '',
-      condition: '', make: '', image: '', serial: ''})
-    }
+    e.preventDefault()
+    if (id) {
+    updateGear(kitId, id, gear)
+    setEdit(false)
+  } else {
+    addGear(gear)
+    setAdd(false)
+  }
+    setGear({ name: '', desc: '', price: 0, model: '',
+    condition: '', make: '', image: '', serial: '', category: ''})
+  }
 
   return (
     <>
@@ -43,14 +45,6 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
           required
           placeholder="Gear Description"
         />
-        {/* <label>Rating:</label>
-        <input 
-          name='rating' 
-          value={gear.rating}
-          onChange={(e) => setGear({...gear, rating: e.target.value})}
-          required
-          placeholder="Gear Rating"
-        /> */}
         <label>Price:</label>
         <input 
           name='price' 
@@ -99,6 +93,15 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
           required
           placeholder="Gear serial"
         />
+        <label>
+          Category
+          <select value={gear.category} onChange={(e) => setGear({...gear, category: e.target.value})}>
+            <option value="camera">Camera</option>
+            <option value="audio">Audio</option>
+            <option value="lens">Lens</option>
+            <option value="light">Light</option>
+          </select>
+        </label>
 
         <button type='submit'>Submit</button>
       </form>
