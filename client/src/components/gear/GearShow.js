@@ -7,7 +7,7 @@ import GearForm from './GearForm';
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
-    const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '', condition: '', make: '', image: '', serial: ''})
+    const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '', condition: '', make: '', image: '', serial: '', category: ''})
     const [editing, setEdit] = useState(false)
 		
     useEffect(() => {
