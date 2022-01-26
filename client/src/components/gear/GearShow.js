@@ -7,7 +7,7 @@ import GearForm from './GearForm';
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
-    const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '', condition: '', make: '', image: '', serial: '', category: ''})
+    const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '', condition: '', make: '', image: '', serial: '', category: '', quantity: '', bought: ''})
     const [editing, setEdit] = useState(false)
 		
     useEffect(() => {
@@ -16,7 +16,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
 				.catch( err => console.log(err))
     }, [])
 
-    const { name, desc, price, model, condition, make, image, serial} = gear
+    const { name, desc, price, model, condition, make, image, serial, category, bought, quantity} = gear
     return (
       <>
       <h1>{name}</h1>
@@ -26,6 +26,9 @@ const GearShow = ({ updateGear, deleteGear }) => {
 			<h4>condition: {condition}</h4>
 			<h4>make: {make}</h4>
 			<h4>serial: {serial}</h4>
+            <h4>category: {category}</h4>
+            <h4>bought: {bought}</h4>
+            <h4>quantity: {quantity}</h4>
       <Image src={image} roundedCircle style={{ width: '250px'}} />
       <Button variant="warning" onClick={() => setEdit(true)}>
         Edit

@@ -16,7 +16,7 @@ const Gears = ({ gears, getAllGears, addGear }) => {
 
   return (
     <>
-			<h1>Gears</h1>
+			<h1>New Gear</h1>
 			{ adding ?
 					<>
 						<GearForm 
