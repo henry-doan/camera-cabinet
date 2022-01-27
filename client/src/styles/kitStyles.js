@@ -1,11 +1,22 @@
 import styled from 'styled-components';
 
+export const ShowPara = styled.p`
+  position: relative;
+  left: 450px;
+  top: 270px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fe2712;
+`
+
 export const MainContainer = styled.div`
   margin: 0 auto;
   max-width: 1280px;
 `
 export const Font = styled.div`
   font-family: 'Montserrat', sans-serif;
+`
+export const RedFont = styled.div`
+  color: #fe2712;
 `
 export const Grid = styled.div`
   margin: 14rem auto;
@@ -36,4 +47,8 @@ export const Header4 = styled.div`
 
 export const Para1 = styled.div`
   color: #606060;
+`
+
+export const KitsGrid = styled.container`
+
 `

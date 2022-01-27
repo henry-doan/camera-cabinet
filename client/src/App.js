@@ -19,23 +19,21 @@ const App = () => (
     <MainNavbar />
     <FetchUser>
       <Container>
-      <>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/' element={<ProtectedRoute /> }>
-            <Route path='/kits' element={<Kits />} />
-            <Route path='/kits/:kitId' element={<KitShow />} />
-            <Route path='/gears' element={<Gears />} />
-            <Route path='/:kitId/gears/:gearId' element={<GearShow />} /> 
-             {/* <Route path='/:gearId/document/:documentId' element={<DocumentShow />} /> */}
-
-          </Route>
-
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/*' element={<Nomatch />} />
-        </Routes>
-      </>
+        <>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/' element={<ProtectedRoute /> }>
+              <Route path='/kits' element={<Kits />} />
+              <Route path='/kits/:kitId' element={<KitShow />} />
+              <Route path='/gears' element={<Gears />} />
+              <Route path='/:kitId/gears/:gearId' element={<GearShow />} /> 
+              {/* <Route path='/:gearId/document/:documentId' element={<DocumentShow />} /> */}
+            </Route>
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/*' element={<Nomatch />} />
+          </Routes>
+        </>
       </Container>
     </FetchUser>
   </>

@@ -33,7 +33,6 @@ const Kits = ({ kits, getAllKits, addKit }) => {
             <Button variant="info" style={{ backgroundColor: "#8B0000"}}onClick={() => setAdding(true)}>Add Kit</Button>
         } */}
         <KitList kits={kits} />
-
         </>
     )
 }
