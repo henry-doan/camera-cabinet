@@ -5,8 +5,8 @@ import { Button } from 'react-bootstrap';
 import GearForm from './GearForm';
 import { useParams } from 'react-router-dom';
 
-const Gears = ({ gears, getAllGears, addGear }) => {
-  const [adding, setAdd] = useState(false);
+const Gears = ({ gears, getAllGears, addGear, kitId }) => {
+    const [adding, setAdd] = useState(false)
 
   const params = useParams()
 
@@ -14,29 +14,22 @@ const Gears = ({ gears, getAllGears, addGear }) => {
     getAllGears(params.kitId)
   }, [])
 
-  return (
-    <>
-
-			<h1 style={{ 
-				color: "white",
-				}}>
-				New Gear
-			</h1>
-
-			{ adding ?
-					<>
-						<GearForm 
-							addGear={addGear} 
-							kitId={params.kitId} 
-							setAdd={setAdd}
-						/>
-						<Button variant="info" onClick={() => setAdd(false)}>Cancel</Button>    
-					</>
-						:
-						<Button variant="info" onClick={() => setAdd(true)}>+</Button>
-			}
-			<GearList gears={gears} kitId={params.kitId} />
-      </>
+    return (
+        <>
+        <h1>Gears</h1>
+        { adding ?
+            <>
+            <GearForm addGear={addGear}
+            kitId={params.kitId}
+            setAdd={setAdd}
+            />
+            <Button variant="info" onClick={() => setAdd(false)}>Cancel</Button>    
+            </>
+            :
+            <Button variant="info" onClick={() => setAdd(true)}>+</Button>
+        }
+        <GearList gears={gears} kitId={params.kitId}/>
+        </>
     )
 }
 
