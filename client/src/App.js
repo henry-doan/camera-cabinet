@@ -23,8 +23,8 @@ const App = () => (
           <Route path='/' element={<Home />} />
           <Route path='/' element={<ProtectedRoute /> }>
             <Route path='/kits' element={<Kits />} />
-            <Route path='/dash' element={<Dash />} />
-             {/* <Route path='kits' element={<Kits />} /> */}
+            {/* <Route path='/dash' element={<Dash />} /> */}
+            <Route path='/gears' element={<Gears />} />
             <Route path='/kits/:kitId' element={<KitShow />} />
              <Route path='/:kitId/gear/:gearId' element={<GearShow />} /> 
              {/* <Route path='/:gearId/document/:documentId' element={<DocumentShow />} /> */}
