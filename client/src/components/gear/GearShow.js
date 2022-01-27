@@ -8,7 +8,7 @@ import { Header1, Header3, Header4, Para1 } from '../../styles/kitStyles';
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
-    const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '', condition: '', make: '', image: '', serial: ''})
+    const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '', condition: '', make: '', image: '', serial: '', category: '', quantity: '', bought: ''})
     const [editing, setEdit] = useState(false)
 		
     useEffect(() => {
@@ -17,9 +17,10 @@ const GearShow = ({ updateGear, deleteGear }) => {
 				.catch( err => console.log(err))
     }, [])
 
-    const { name, desc, price, model, condition, make, image, serial} = gear
+    const { name, desc, price, model, condition, make, image, serial, category, bought, quantity} = gear
     return (
       <>
+
       <Header1>{name}</Header1>
       <Header3>Desc: {desc}</Header3>
 			<Header4>price: {price}</Header4>
@@ -27,6 +28,11 @@ const GearShow = ({ updateGear, deleteGear }) => {
 			<Header4>condition: {condition}</Header4>
 			<Header4>make: {make}</Header4>
 			<Header4>serial: {serial}</Header4>
+
+            <Header4>category: {category}</Header4>
+            <Header4>bought: {bought}</Header4>
+            <Header4>quantity: {quantity}</Header4>
+
       <Image src={image} roundedCircle style={{ width: '250px'}} />
       <Button variant="warning" onClick={() => setEdit(true)}>
         Edit
