@@ -1,37 +1,21 @@
-import { ListGroup, Row, Col, Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Grid, Font } from '../../styles/kitStyles';
+import { Container } from 'react-bootstrap';
 
 const KitList = ({ kits }) => {
     return(
-        <>
-        {/* <ListGroup>
-            { kits.map( k =>
-            <Link to={`/kits/${k.id}`}>
-                <ListGroup.Item>{k.name}</ListGroup.Item>
-            </Link>
-            )}
-        </ListGroup> */}
-          <Container>
-            <Row xs={1} md={3}>
-            { kits.map( k => 
-                <Col>
-                  <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={k.image} />
-                    <Card.Body>
-                      <Card.Title>
-												{k.name}
-											</Card.Title>
-                      <Link to={`/kits/${k.id}`}>
-                        <Button type="submit" variant="primary">Show</Button>
-                      </Link>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                )
-              }
-            </Row>
-          </Container>
-        </>
+			<Container>
+				<Font>
+					<Grid>
+						{ kits.map( k =>
+							<Link to={`/kits/${k.id}`} style={{ color: "#fe2712", textDecoration: 'none'}}>
+								<img src={k.image} style={{ width: '400px'}}></img>
+								<p>{k.name}</p>
+							</Link>
+						)}
+					</Grid>
+				</Font>
+			</Container>
     	)
 	}
 

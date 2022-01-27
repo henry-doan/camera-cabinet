@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Image, Modal, Button } from 'react-bootstrap';
 import GearForm from './GearForm';
+import { Header1, Header3, Header4, Para1 } from '../../styles/kitStyles';
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
@@ -19,13 +20,13 @@ const GearShow = ({ updateGear, deleteGear }) => {
     const { name, desc, price, model, condition, make, image, serial} = gear
     return (
       <>
-      <h1>{name}</h1>
-      <h3>Desc: {desc}</h3>
-			<h4>price: {price}</h4>
-			<h4>model: {model}</h4>
-			<h4>condition: {condition}</h4>
-			<h4>make: {make}</h4>
-			<h4>serial: {serial}</h4>
+      <Header1>{name}</Header1>
+      <Header3>Desc: {desc}</Header3>
+			<Header4>price: {price}</Header4>
+			<Header4>model: {model}</Header4>
+			<Header4>condition: {condition}</Header4>
+			<Header4>make: {make}</Header4>
+			<Header4>serial: {serial}</Header4>
       <Image src={image} roundedCircle style={{ width: '250px'}} />
       <Button variant="warning" onClick={() => setEdit(true)}>
         Edit

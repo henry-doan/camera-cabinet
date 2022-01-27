@@ -16,7 +16,11 @@ const Gears = ({ gears, getAllGears, addGear }) => {
 
   return (
     <>
-			<h1>Gears</h1>
+			<h1 style={{ 
+				color: "white",
+				}}>
+				Gear
+			</h1>
 			{ adding ?
 					<>
 						<GearForm 
