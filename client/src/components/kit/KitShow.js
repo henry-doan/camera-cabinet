@@ -5,6 +5,7 @@ import { Image, Button } from 'react-bootstrap';
 import KitForm from './KitForm';
 import { KitConsumer } from '../../providers/KitProvider';
 import Gears from '../gear/Gears';
+import { Header1, Header3, Para1 } from '../../styles/kitStyles';
 
 
 const KitShow = ({ updateKit, deleteKit }) => {
@@ -36,9 +37,9 @@ return (
       </>
       :
       <>
-           <h1>Name: {params.kitId} {name}</h1>
-          <h3>Description: {description}</h3>
-          <h3>Item: {item} </h3> 
+        <Header1>Name: {params.kitId} {name}</Header1>
+          <Header3>Description: {description}</Header3>
+          <Header3>Item: {item} </Header3> 
           <Image src={image} roundedCircle style={{ width: '250px'}} />
 
           <Button 

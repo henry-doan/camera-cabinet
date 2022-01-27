@@ -1,7 +1,7 @@
 
 const Home = ({}) => (
   <>
-    <h1>Home Page</h1>
+    <h1 style={{ color: "white"}}>Home Page</h1>
   </>
 )
 
