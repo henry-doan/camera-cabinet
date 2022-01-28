@@ -11,6 +11,22 @@ const MainNavbar = ({ user, handleLogout }) => {
     if (user) {
       return (
         <>
+
+            <Nav.Link>
+              <Link to=  '/categories' 
+              style={{ 
+                color: "#fe2712", 
+                textDecoration: 'none'
+                }}> Categories
+                </Link>
+                </Nav.Link>
+            <Navbar.Toggle />
+
+
+
+
+
+        
           <Font>
               <Nav.Link>
                 <Link to='/kits' 
@@ -33,6 +49,7 @@ const MainNavbar = ({ user, handleLogout }) => {
               </Link>
             </Nav.Link>
           </Font>
+          
           <Font>
             <Nav.Link onClick={ () => handleLogout() }>
               <Link to="/logout" 
