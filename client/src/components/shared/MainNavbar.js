@@ -3,6 +3,7 @@ import { AuthConsumer } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Font } from '../../styles/kitStyles';
+import { Header1 } from '../../styles/aboutStyles';
 
 const MainNavbar = ({ user, handleLogout }) => {
 
@@ -11,6 +12,28 @@ const MainNavbar = ({ user, handleLogout }) => {
     if (user) {
       return (
         <>
+        <Font>
+              <Nav.Link>
+                <Link to='/profile' 
+                  style={{ 
+                  color: "#fe2712", 
+                  textDecoration: 'none'
+                  }}>
+                    Profile
+                </Link>
+              </Nav.Link>
+            </Font>
+        <Font>
+              <Nav.Link>
+                <Link to='/about' 
+                  style={{ 
+                  color: "#fe2712", 
+                  textDecoration: 'none'
+                  }}>
+                    About Us
+                </Link>
+              </Nav.Link>
+            </Font>
           <Font>
               <Nav.Link>
                 <Link to='/kits' 

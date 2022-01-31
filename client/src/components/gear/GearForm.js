@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 
-
-
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, category, bought, quantity, setEdit, updateGear, addGear}) => {
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear}) => {
   
-  const [gear, setGear] = useState({ name: '', desc: '', price: '', model: '',
-  condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
+  const [gear, setGear] = useState({ name: '', desc: '', rating: '', price: '', model: '',
+  condition: '', make: '', image: '', serial: 0})
 
   useEffect( () => {
     if (id) {
-      setGear({ name, desc, price, model, condition, make, image, serial, category, bought, quantity})
+      setGear({ name, desc, price, model, condition, make, image, serial})
     }
   }, [])
 
@@ -23,7 +21,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     setAdd(false)
   }
     setGear({ name: '', desc: '', price: 0, model: '',
-    condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
+    condition: '', make: '', image: '', serial: 0})
   }
 
  
@@ -65,11 +63,10 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
         </label>
         <label>Nickname:</label>
         <input 
-          name='name' 
-          value={gear.name}
-          onChange={(e) => setGear({...gear, name: e.target.value})}
-          optional
-          placeholder="Optional"
+          name='rating' 
+          value={gear.rating}
+          onChange={(e) => setGear({...gear, rating: e.target.value})}
+          placeholder="Gear Rating"
         />
         <h1>Purchase Information</h1>
         <label>Price Paid:</label>
