@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear}) => {
   
-  const [gear, setGear] = useState({ name: '', desc: '', rating: '', price: '', model: '',
-  condition: '', make: '', image: '', serial: 0})
+  const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
+  condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
 
   useEffect( () => {
     if (id) {
@@ -17,7 +17,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     updateGear(kitId, id, gear)
     setEdit(false)
   } else {
-    addGear(gear)
+    addGear(kitId, gear)
     setAdd(false)
   }
     setGear({ name: '', desc: '', price: 0, model: '',
@@ -30,27 +30,30 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
       <form onSubmit={handleSubmit}>
       <label>Image of Gear:</label>
         <input 
+          type="text"
           name='image' 
           value={gear.image}
           onChange={(e) => setGear({...gear, image: e.target.value})}
           required
-          placeholder="Gear image"
+          placeholder="Image"
           />
         <label>Manufacturer:</label>
         <input 
+          type="text"
           name='make' 
           value={gear.make}
           onChange={(e) => setGear({...gear, make: e.target.value})}
           required
-          placeholder="Input"
+          placeholder="Make"
         />
        <label>Model No.:</label>
         <input 
-          name='desc' 
+          type="text"
+          name='Model' 
           value={gear.model}
           onChange={(e) => setGear({...gear, model: e.target.value})}
           required
-          placeholder="Input"
+          placeholder="Model"
         />
          <label>
           Category
@@ -63,59 +66,60 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
         </label>
         <label>Nickname:</label>
         <input 
-          name='rating' 
-          value={gear.rating}
-          onChange={(e) => setGear({...gear, rating: e.target.value})}
-          placeholder="Gear Rating"
+          type="text"
+          name='name' 
+          value={gear.name}
+          onChange={(e) => setGear({...gear, name: e.target.value})}
+          placeholder="Name"
         />
         <h1>Purchase Information</h1>
         <label>Price Paid:</label>
         <input 
+        type="text"
           name='price'
           value={gear.price}
           onChange={(e) => setGear({...gear, price: e.target.value})}
-          optional
-          placeholder="Optional"
+          placeholder="Price"
         />
         <label>Used:</label>
         <input 
+        type="text"
           name='condition' 
           value={gear.condition}
           onChange={(e) => setGear({...gear, condition: e.target.value})}
-          optional
-          placeholder="Optional"
+          placeholder="Condition"
         />
        <label>Quantity:</label>
         <input 
+        type="text"
           name='quantity'
           value={gear.quantity}
           onChange={(e) => setGear({...gear, quantity: e.target.value})}
-          optional
-          placeholder="Optional"
+          placeholder="Quantity"
         />
        <label>Date of Purchase:</label>
         <input 
+          type="date"
           name='bought' 
           value={gear.bought}
           onChange={(e) => setGear({...gear, bought: e.target.value})}
-          optional
-          placeholder="Optional"
+          placeholder="Bought"
         />
        <label>Serial Number:</label>
         <input 
+          tpye="text"
           name='serial' 
           value={gear.serial}
           onChange={(e) => setGear({...gear, serial: e.target.value})}
-          optional
-          placeholder="Optional"
+          placeholder="Serial"
         />
         <label>Notes:</label>
         <input 
+          type="text"
           name='desc'
           value={gear.desc}
           onChange={(e) => setGear({...gear, desc: e.target.value})}
-          optional
-          placeholder="Optional"
+          placeholder="Description"
         />
         <button type='submit'>Submit</button>
       </form>

@@ -36,7 +36,7 @@ const MainNavbar = ({ user, handleLogout }) => {
             </Font>
           <Font>
               <Nav.Link>
-                <Link to='/kits' 
+                <Link to='/kits'
                   style={{ 
                   color: "#fe2712", 
                   textDecoration: 'none'
@@ -47,7 +47,7 @@ const MainNavbar = ({ user, handleLogout }) => {
             </Font>
           <Font>
             <Nav.Link>
-              <Link to='/gears' 
+              <Link to='/gears'
                 style={{ 
                 color: "#fe2712", 
                 textDecoration: 'none'

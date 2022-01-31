@@ -19,45 +19,52 @@ const GearShow = ({ updateGear, deleteGear }) => {
 
     const { name, desc, price, model, condition, make, image, serial, rating, id} = gear
     return (
-        <>
-        { editing ? 
-          <>
-            <GearForm 
-              {...gear}
-              updateGear={updateGear} 
-              gearId ={params.kitId}
-              id={params.gearId}
-              updateGame={updateGear}
-              setEdit= {setEdit}
-            />
-            <Button variant="warning" onClick={() => setEdit(false)}>Cancel</Button>
-            <br />
-          </>
-          :
-          <>
-               <h1>Name: {params.gearId} {name}</h1>
-              <h3>Description: {desc}</h3>
-              <h3>Price: {price} </h3> 
-              <Image src={image} roundedCircle style={{ width: '250px'}} />
-    
-              <Button 
-                variant="warning" 
-                onClick={() => setEdit(true)}
-              >
-                Edit
-              </Button>
-              <Button 
-                variant="danger"
-                onClick={() => deleteGear(id)}
-              >
-                Delete
-              </Button>
-            </>
-          }
-          {/* <Documents documentId={id} /> */}
-        </>
+      <>
+        <Header1>{name}</Header1>
+        <Header3>Desc: {desc}</Header3>
+        <Header4>price: {price}</Header4>
+        <Header4>model: {model}</Header4>
+        <Header4>condition: {condition}</Header4>
+        <Header4>make: {make}</Header4>
+        <Header4>serial: {serial}</Header4>
+        <Header4>category: {category}</Header4>
+        <Header4>bought: {bought}</Header4>
+        <Header4>quantity: {quantity}</Header4>
+        <Image src={image} style={{ width: '400px'}} />
+      
+      <Button variant="warning" onClick={() => setEdit(true)}>
+        Edit
+      </Button>
+      <Button variant="danger" onClick={() => deleteGear(params.kitId, params.gameId)}>
+        Delete
+      </Button>
+      
+      {/* <Documents gearId={params.gearId} /> */}
+
+
+      <Modal show={editing} onHide={() => setEdit(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Editing</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <GearForm
+            {...gear}
+            kitId={params.kitId}
+            id={params.gearId}
+            updateGear={updateGear}
+            setEdit={setEdit}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setEdit(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
     )
 	}
+
 
 const ConnectedGearShow = (props) => (
     <GearConsumer>
