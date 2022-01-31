@@ -6,10 +6,7 @@ class Api::KitsController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
-=======
     # @kit = current_user.kits.find(params[:id])
->>>>>>> a9fda6d (rebasing to newest version)
     render json: @kit
   end
 

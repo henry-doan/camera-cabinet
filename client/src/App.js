@@ -10,6 +10,8 @@ import Kits from './components/kit/Kits';
 import KitShow from './components/kit/KitShow';
 import GearShow from './components/gear/GearShow';
 import Gears from './components/gear/Gears';
+import About from './components/shared/About';
+import Profile from './components/shared/Profile';
 import { Container } from 'react-bootstrap';
 // import DocumentShow from './components/document/DocumentShow';
 
@@ -23,10 +25,12 @@ const App = () => (
           <Route path='/' element={<Home />} />
           <Route path='/' element={<ProtectedRoute /> }>
             <Route path='/kits' element={<Kits />} />
+            <Route path='/profile' element={<Profile />} />
             {/* <Route path='/dash' element={<Dash />} /> */}
             <Route path='/gears' element={<Gears />} />
             <Route path='/kits/:kitId' element={<KitShow />} />
              <Route path='/:kitId/gear/:gearId' element={<GearShow />} /> 
+             <Route path='/about' element={<About />} /> 
              {/* <Route path='/:gearId/document/:documentId' element={<DocumentShow />} /> */}
             </Route>
             <Route path='/login' element={<Login />} />
