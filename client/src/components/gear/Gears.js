@@ -20,7 +20,7 @@ const Gears = ({ gears, getAllGears, addGear }) => {
 			<h1 style={{ 
 				color: "white",
 				}}>
-				New Gear
+				All Gear
 			</h1>
 
 			{ adding ?
@@ -33,7 +33,7 @@ const Gears = ({ gears, getAllGears, addGear }) => {
 						<Button variant="info" onClick={() => setAdd(false)}>Cancel</Button>    
 					</>
 						:
-						<Button variant="info" onClick={() => setAdd(true)}>+</Button>
+						<Button variant="info" onClick={() => setAdd(true)}>Add Gear</Button>
 			}
 			<GearList gears={gears} kitId={params.kitId} />
       </>

@@ -20,26 +20,25 @@ const GearShow = ({ updateGear, deleteGear }) => {
     const { name, desc, price, model, condition, make, image, serial, category, bought, quantity} = gear
     return (
       <>
-
-      <Header1>{name}</Header1>
-      <Header3>Desc: {desc}</Header3>
-			<Header4>price: {price}</Header4>
-			<Header4>model: {model}</Header4>
-			<Header4>condition: {condition}</Header4>
-			<Header4>make: {make}</Header4>
-			<Header4>serial: {serial}</Header4>
-
-            <Header4>category: {category}</Header4>
-            <Header4>bought: {bought}</Header4>
-            <Header4>quantity: {quantity}</Header4>
-
-      <Image src={image} roundedCircle style={{ width: '250px'}} />
+        <Header1>{name}</Header1>
+        <Header3>Desc: {desc}</Header3>
+        <Header4>price: {price}</Header4>
+        <Header4>model: {model}</Header4>
+        <Header4>condition: {condition}</Header4>
+        <Header4>make: {make}</Header4>
+        <Header4>serial: {serial}</Header4>
+        <Header4>category: {category}</Header4>
+        <Header4>bought: {bought}</Header4>
+        <Header4>quantity: {quantity}</Header4>
+        <Image src={image} style={{ width: '400px'}} />
+      
       <Button variant="warning" onClick={() => setEdit(true)}>
         Edit
       </Button>
       <Button variant="danger" onClick={() => deleteGear(params.kitId, params.gameId)}>
         Delete
       </Button>
+      
       {/* <Documents gearId={params.gearId} /> */}
 
 
@@ -65,6 +64,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
     </>
     )
 	}
+
 
 const ConnectedGearShow = (props) => (
     <GearConsumer>
