@@ -1,18 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AuthConsumer } from '../../providers/AuthProvider';
 
-const Register = ({ handleRegister }) => {
-
+const Register = ({ handleRegister, updateUser, id, setEdit, email, password, passwordConfirmation, fname, lname}) => {
   const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '', fname: '', lname: '' })
+
+
+  useEffect( () => {
+    if (id) {
+    setUser({id, email, password, passwordConfirmation, fname, lname})
+    }
+  }, [])
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (user.password === user.passwordConfirmation) {
+    if (setEdit(true)) {
+      updateUser(id, user)
+      setEdit(false)
+    } if (user.password === user.passwordConfirmation) {
       handleRegister(user)
       setUser({ email: '', password: '', passwordConfirmation: '', fname: '', lname: '' })
     } else {
       alert('Passwords do not match.')
-    }
+    }  
   }
 
   return (

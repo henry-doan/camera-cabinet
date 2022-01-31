@@ -2,23 +2,24 @@ import { GearConsumer } from '../../providers/GearProvider';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Image, Modal, Button } from 'react-bootstrap';
+import { Image, Button } from 'react-bootstrap';
 import GearForm from './GearForm';
 import { Header1, Header3, Header4, Para1 } from '../../styles/kitStyles';
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
-    const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '', condition: '', make: '', image: '', serial: '', category: '', quantity: '', bought: ''})
+    const [gear, setGear] = useState({ name: '', desc:'',price: 0, model:'', condition:'',make:'', image: '', serial:'', rating: ''})
     const [editing, setEdit] = useState(false)
-		
-    useEffect(() => {
-			axios.get(`/api/kits/${params.kitId}/gears/${params.gearId}/`)
-				.then( res => setGear(res.data))
-				.catch( err => console.log(err))
+
+    useEffect(() =>{
+        axios.get(`/api/kits/${params.kitId}/gears/${params.gearId}`)
+    .then( res => setGear(res.data))
+    .catch( err => console.log(err))
     }, [])
 
-    const { name, desc, price, model, condition, make, image, serial, category, bought, quantity} = gear
+    const { name, desc, price, model, condition, make, image, serial, rating, id} = gear
     return (
+
       <>
         <Header1>{name}</Header1>
         <Header3>Desc: {desc}</Header3>
@@ -62,6 +63,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
         </Modal.Footer>
       </Modal>
     </>
+
     )
 	}
 

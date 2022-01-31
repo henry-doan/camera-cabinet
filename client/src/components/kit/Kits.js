@@ -24,14 +24,14 @@ const Kits = ({ kits, getAllKits, addKit }) => {
 							The easy way to remember what you will take to your adventures.
 						</Font>
 					</Para1>
-        {/* { adding ?
+        { adding ?
             <>
             <KitForm addKit={addKit} />
             <Button variant="info" onClick={() => setAdding(false)}>Cancel</Button>    
             </>
             :
             <Button variant="info" style={{ backgroundColor: "#8B0000"}}onClick={() => setAdding(true)}>Add Kit</Button>
-        } */}
+        }
         <KitList kits={kits} />
         </>
     )
