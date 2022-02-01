@@ -13,7 +13,7 @@ import Gears from './components/gear/Gears';
 import About from './components/shared/About';
 import Profile from './components/shared/Profile';
 import { Container } from 'react-bootstrap';
-// import DocumentShow from './components/document/DocumentShow';
+import DocumentShow from './components/document/DocumentShow';
 
 const App = () => (
   <>
@@ -24,11 +24,13 @@ const App = () => (
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/' element={<ProtectedRoute /> }>
+              <Route path='/about' element={<About />} />
+              <Route path='/profile' element={<Profile />} />
               <Route path='/kits' element={<Kits />} />
               <Route path='/kits/:kitId' element={<KitShow />} />
               <Route path='/gears' element={<Gears />} />
               <Route path='/:kitId/gears/:gearId' element={<GearShow />} /> 
-              {/* <Route path='/:gearId/document/:documentId' element={<DocumentShow />} /> */}
+              <Route path='/:gearId/documents/:documentId' element={<DocumentShow />} />
             </Route>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />

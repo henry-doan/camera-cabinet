@@ -1,20 +1,20 @@
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const DocumentList = ({ documents }) => {
-    return(
+const DocumentList = ({ documents, gearId, kitId }) => (
         <>
-        <ListGroup>
-            { documents.map( d =>
-            <Link to={`/documents/${d.id}`}>
-                <ListGroup.Item>{d.name}</ListGroup.Item>
-                </Link>
-                )}
-  
- 
-</ListGroup>
+				<h1>All Documents</h1>
+					<Container>
+						<ListGroup>
+								{ documents.map( d =>
+								<Link to={`/${gearId}/documents/${d.id}`}
+											state={{ kitId: kitId }}>
+										{d.image}
+								</Link>
+								)}
+						</ListGroup>
+					</Container>
         </>
     )
-}
 
 export default DocumentList;

@@ -28,11 +28,9 @@ export const Grid = styled.div`
   height: 300px;
   margin-left: 220px;
   margin-right: auto;
-
   justify-items: end;
   align-content: space-evenly;
   align-items: end;
-  border: solid white;
 `
 export const Header1 = styled.div`
   color: white;

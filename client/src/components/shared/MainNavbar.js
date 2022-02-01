@@ -45,7 +45,7 @@ const MainNavbar = ({ user, handleLogout }) => {
                 </Link>
               </Nav.Link>
             </Font>
-          <Font>
+          {/* <Font>
             <Nav.Link>
               <Link to='/gears'
                 style={{ 
@@ -55,7 +55,7 @@ const MainNavbar = ({ user, handleLogout }) => {
                   Gear
               </Link>
             </Nav.Link>
-          </Font>
+          </Font> */}
           <Font>
             <Nav.Link onClick={ () => handleLogout() }>
               <Link to="/logout" 

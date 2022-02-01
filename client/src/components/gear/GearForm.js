@@ -21,7 +21,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     setAdd(false)
   }
     setGear({ name: '', desc: '', price: 0, model: '',
-    condition: '', make: '', image: '', serial: 0})
+    condition: '', make: '', image: '', serial: ''})
   }
 
  
