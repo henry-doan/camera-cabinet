@@ -1,55 +1,56 @@
 import { useState, useEffect } from 'react';
 
-const ProfileForm = ({ updateUser, setEdit}) => {
-  const [user, setKit] = useState({ name: '', description: '', image: '' })
+const ProfileForm = ({ updateUser, setEdit, fname, lname, age,email, addUser,id}) => {
+  const [user, setUser] = useState({ fname: '', lname: '', age: '', email: '' })
  
-  // item: '' is a data atr but not sure if we need to include in the form
+ 
   useEffect( () => {
     if (id) {
-    setKit({ name, description, image/*, item */})
+    setUser({ fname, lname, age, email})
     }
   }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateKit(id, kit)
+      updateUser(id, user)
       setEdit(false)
-    } else {
-      addKit(kit)
-    }
-  setKit({ name: '', description: '', image: ''/*, item: ''*/})
+    } 
+  setUser({ fname: '', lname: '', age: '',email: '' })
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>Kit Name:</label>
+        <label>First Name:</label>
         <input 
-          name='Kit Name'
-          value={kit.name}
-          onChange={(e) => setKit({ ...kit, name: e.target.value })}
+          name='First Name'
+          value={user.fname}
+          onChange={(e) => setUser({ ...user, fname: e.target.value })} 
+        />
+        <label>Last Name:</label>
+        <input 
+          name='Last Name'
+          value={user.lname}
+          onChange={(e) => setUser({ ...user, lname: e.target.value })}
+        />
+        <label>Age:</label>
+        <input 
+          name='Age'
+          value={user.age}
+          onChange={(e) => setUser({ ...user, age: e.target.value })}
+        />
+        <label>Email:</label>
+        <input 
+          name='Email'
+          value={user.email}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
           required
         />
-        <label>Kit Description:</label>
-        <textarea
-          name='Kit Description'
-          value={kit.description}
-          onChange={(e) => setKit({ ...kit, description: e.target.value })}
-          required
-        ></textarea>
-         <label>Kit Image:</label>
-        <input 
-          name='Url of image NOT REQUIRED'
-          value={kit.image}
-          onChange={(e) => setKit({ ...kit, image: e.target.value })}
-        />
-        
-         {/* <label>Kit Item Count:</label> */}
         <button type="submit">Submit</button>
       </form>
     </>
   )
 }
 
-export default KitForm;
+export default ProfileForm;

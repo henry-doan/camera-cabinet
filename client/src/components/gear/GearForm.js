@@ -8,7 +8,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
 
   useEffect( () => {
     if (id) {
-      setGear({ name, desc, price, model, condition, make, image, serial})
+      setGear({ name, desc, price, model, condition, make, image, serial,bought,quantity,category})
     }
   }, [])
 
@@ -108,7 +108,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
         />
        <label>Serial Number:</label>
         <input 
-          tpye="text"
+          type="text"
           name='serial' 
           value={gear.serial}
           onChange={(e) => setGear({...gear, serial: e.target.value})}

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :gears, except: [:index, :show, :create, :update, :destroy] do
       resources :documents
     end
+    resources :users, only: [:update]
   end
   
 end
