@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ShowPara = styled.div`
   position: relative;
   left: 450px;
-  top: 270px;
+  top: 10px;
   font-family: 'Montserrat', sans-serif;
   color: #fe2712;
 `;
@@ -72,7 +72,7 @@ left: 0%;
 // `;
 
 export const Header1 = styled.div`
-  color: white;
+  color: Black;
   font-size: 40px;
   font-family: 'Montserrat', sans-serif;
   margin: 30px;

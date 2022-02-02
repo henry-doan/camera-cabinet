@@ -25,7 +25,7 @@ export const Header1 = styled.div`
   `
 
   export const Grid = styled.div`
-  margin: 35rem auto;
+  margin: 60rem auto;
   width: min(100%, 10rem);
   display: grid;
   grid-template-columns: 600% 600%;
@@ -36,39 +36,54 @@ export const Header1 = styled.div`
   margin-left: 1px ;
   margin-right: auto;
   justfiy-content: space-evenly;
-  justify-items: end;
   align-content: space-evenly;
   align-items: end;
+  justify-items: end;
+  position: relative;
+  flex-grow: 1;
+  `
+
+  export const Grid2 = styled.div`
   
-`
+  margin: auto;
+ width: 50%;
+ padding: 10px;
+  flex-grow: 1;
+  `
+  
+
 export const Image1 = styled.div` {
+  
   &:hover {
     transition: .5s ease;
     opacity: 90%;
   } 
   &:hover ${Header1} {
+    margin: auto;
+ 
+ padding: 10px;
     transition: .5s ease;
     opacity: 200%;
-    color: White ;
+    color: #E61F25 ;
   }
   &:hover ${Header2} {
     transition: .5s ease;
     opacity: 200%;
-    color: White ;
+    color: #292929 ;
   }
 `
 
 export const Iborder = styled.div`
-    width: 150,
-    height: 150,
-    borderRadius: 150 / 2,
-    overflow: "hidden",
-    borderWidth: 3,
-    border-color: "Red",
+float: left;
+width:  400px;
+height: 400px;
+object-fit: cover;
 `
   
 
- 
+ export const TopMargin = styled.div`
+ margin: 5rem auto;
+ `
 
 export const Middle = styled.div`
 
