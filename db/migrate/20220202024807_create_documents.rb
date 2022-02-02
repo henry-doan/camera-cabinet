@@ -3,7 +3,7 @@ class CreateDocuments < ActiveRecord::Migration[6.1]
     create_table :documents do |t|
       t.datetime :bought
       t.string :image
-      t.belongs_to :gears, null: false, foreign_key: true
+      t.belongs_to :gear, null: false, foreign_key: true
 
       t.timestamps
     end
