@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear}) => {
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, 
+  make, image, serial, setEdit, updateGear, addGear,bought,quantity, category}) => {
 
   
   const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
@@ -9,7 +10,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
 
   useEffect( () => {
     if (id) {
-      setGear({ name, desc, price, model, condition, make, image, serial})
+      setGear({ name, desc, price, model, condition, make, image, serial,bought,quantity,category})
     }
   }, [])
 
@@ -23,7 +24,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     setAdd(false)
   }
     setGear({ name: '', desc: '', price: 0, model: '',
-    condition: '', make: '', image: '', serial: 0})
+    condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
   }
 
  
@@ -109,7 +110,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
         />
        <label>Serial Number:</label>
         <input 
-          tpye="text"
+          type="text"
           name='serial' 
           value={gear.serial}
           onChange={(e) => setGear({...gear, serial: e.target.value})}

@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Card , Button} from 'react-bootstrap';
 import { AuthConsumer } from '../../providers/AuthProvider';
-import Moment from 'react-moment';
-import Register from '../auth/Register'
+import ProfileForm from './ProfileForm'
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -15,7 +14,7 @@ const Profile = ({ id, fname, lname, age, email, image, updateUser}) => {
   const [editing, setEdit] = useState(false)
 
   useEffect( () => {
-    axios.get(`/api/auth/edit/`)
+    axios.get(`/api/auth/edit`)
       .then( res => setUser(res.data))
       .catch( err => console.log(err))
   }, [])
@@ -27,8 +26,8 @@ const Profile = ({ id, fname, lname, age, email, image, updateUser}) => {
 <>
     { editing ? 
       <>
-        <Register
-          {...user}
+        <ProfileForm
+          email={email}
           updateUser={updateUser} 
           setEdit={setEdit}
           id={id}
@@ -46,17 +45,12 @@ const Profile = ({ id, fname, lname, age, email, image, updateUser}) => {
           Age: {age}
           <br />
           Email: {email}
-          <br />
-          Date Joined: {' '}
         </Card.Text>
         <Button 
             variant="warning" 
             onClick={() => setEdit(true)}
           >Edit Profile</Button>
-          <Link to=
- '/api/auth/edit'>
-                    Profile
-                </Link>
+       
       </Card.Body>
     </Card>
         </>

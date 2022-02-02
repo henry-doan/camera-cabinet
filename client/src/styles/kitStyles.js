@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ShowPara = styled.div`
   position: relative;
   left: 450px;
-  top: 270px;
+  top: 10px;
   font-family: 'Montserrat', sans-serif;
   color: #fe2712;
 `
@@ -35,15 +35,15 @@ export const Grid = styled.div`
   border: solid white;
 `
 export const Header1 = styled.div`
-  color: white;
+  color: Black;
   font-size: 40px;
   
 `
 export const Header3 = styled.div`
-  color: white;
+  color: Black;
 `
 export const Header4 = styled.div`
-  color: white;
+  color: Black;
 `
 
 export const Para1 = styled.div`
