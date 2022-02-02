@@ -3,7 +3,7 @@ import { AuthConsumer } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Font } from '../../styles/kitStyles';
-import { Header1 } from '../../styles/aboutStyles';
+import { NavBackground } from '../../styles/navbarStyles';
 
 const MainNavbar = ({ user, handleLogout }) => {
 
@@ -12,7 +12,8 @@ const MainNavbar = ({ user, handleLogout }) => {
     if (user) {
       return (
         <>
-        <Font>
+          <NavBackground>
+            <Font>
               <Nav.Link>
                 <Link to='/profile' 
                   style={{ 
@@ -23,7 +24,9 @@ const MainNavbar = ({ user, handleLogout }) => {
                 </Link>
               </Nav.Link>
             </Font>
-        <Font>
+          </NavBackground>
+          <NavBackground>
+            <Font>
               <Nav.Link>
                 <Link to='/about' 
                   style={{ 
@@ -34,7 +37,9 @@ const MainNavbar = ({ user, handleLogout }) => {
                 </Link>
               </Nav.Link>
             </Font>
-          <Font>
+          </NavBackground>
+          <NavBackground>
+            <Font>
               <Nav.Link>
                 <Link to='/kits'
                   style={{ 
@@ -45,7 +50,8 @@ const MainNavbar = ({ user, handleLogout }) => {
                 </Link>
               </Nav.Link>
             </Font>
-          <Font>
+          </NavBackground>
+          {/* <Font>
             <Nav.Link>
               <Link to='/gears'
                 style={{ 
@@ -55,7 +61,8 @@ const MainNavbar = ({ user, handleLogout }) => {
                   Gear
               </Link>
             </Nav.Link>
-          </Font>
+          </Font> */}
+          <NavBackground>
           <Font>
             <Nav.Link onClick={ () => handleLogout() }>
               <Link to="/logout" 
@@ -67,34 +74,39 @@ const MainNavbar = ({ user, handleLogout }) => {
               </Link>
             </Nav.Link>
           </Font>
+          </NavBackground>
         </>
       )
     } else {
       // links will display when user is not logged in
       return (
         <>
-          <Font>
-            <Nav.Link>
-              <Link to='/login' 
-                style={{ 
-                color: "#fe2712", 
-                textDecoration: 'none'
-                }}>
-                  Login
-              </Link>
-            </Nav.Link>
-          </Font>
-          <Font>
-            <Nav.Link>
-              <Link to='/register' 
-                style={{ color: 
-                "#fe2712", 
-                textDecoration: 'none'
-                }}>
-                  Register
-              </Link>
-            </Nav.Link>
-          </Font>
+          <NavBackground>
+            <Font>
+              <Nav.Link>
+                <Link to='/login' 
+                  style={{ 
+                  color: "#fe2712", 
+                  textDecoration: 'none'
+                  }}>
+                    Login
+                </Link>
+              </Nav.Link>
+            </Font>
+          </NavBackground>
+          <NavBackground>
+            <Font>
+              <Nav.Link>
+                <Link to='/register' 
+                  style={{ color: 
+                  "#fe2712", 
+                  textDecoration: 'none'
+                  }}>
+                    Register
+                </Link>
+              </Nav.Link>
+            </Font>
+          </NavBackground>
         </>
       )
     }
@@ -102,24 +114,26 @@ const MainNavbar = ({ user, handleLogout }) => {
 
   return (
     <>
-      <Font>
-        <Navbar variant="light">
-          <Container>
-            <Navbar.Brand className="mr-auto">
-              <Link to="/" 
-                style={{ 
-                color: "#fe2712", 
-                textDecoration: 'none'
-                }}>
-                Camera Cabinet
-              </Link>
-            </Navbar.Brand>
-            <Nav className="mr-auto">
-              { rightNavItems() }
-            </Nav>
-          </Container>
-        </Navbar>
-      </Font>
+      <NavBackground>
+        <Font>
+          <Navbar variant="light">
+            <Container>
+              <Navbar.Brand className="mr-auto">
+                <Link to="/" 
+                  style={{ 
+                  color: "#fe2712", 
+                  textDecoration: 'none'
+                  }}>
+                  Camera Cabinet
+                </Link>
+              </Navbar.Brand>
+              <Nav className="mr-auto">
+                { rightNavItems() }
+              </Nav>
+            </Container>
+          </Navbar>
+        </Font>
+      </NavBackground>
     </>
   )
 }

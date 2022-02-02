@@ -2,13 +2,14 @@ import { GearConsumer } from '../../providers/GearProvider';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Image, Button } from 'react-bootstrap';
+import { Image, Button, Modal } from 'react-bootstrap';
 import GearForm from './GearForm';
 import { Header1, Header3, Header4, Para1 } from '../../styles/kitStyles';
+import Documents from '../document/Documents';
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
-    const [gear, setGear] = useState({ name: '', desc:'',price: 0, model:'', condition:'',make:'', image: '', serial:'', rating: ''})
+    const [gear, setGear] = useState({ name: '', desc:'', price: 0, model:'', condition:'', make:'', image: '', serial:'', category: '', bought: '', quantity: ''})
     const [editing, setEdit] = useState(false)
 
     useEffect(() =>{
@@ -17,7 +18,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
     .catch( err => console.log(err))
     }, [])
 
-    const { name, desc, price, model, condition, make, image, serial, rating, id} = gear
+    const { name, desc, price, model, condition, make, image, serial, category, bought, quantity, id} = gear
     return (
 
       <>
@@ -40,8 +41,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
         Delete
       </Button>
       
-      {/* <Documents gearId={params.gearId} /> */}
-
+      <Documents gearId={params.gearId} />
 
       <Modal show={editing} onHide={() => setEdit(false)}>
         <Modal.Header closeButton>
@@ -63,7 +63,6 @@ const GearShow = ({ updateGear, deleteGear }) => {
         </Modal.Footer>
       </Modal>
     </>
-
     )
 	}
 

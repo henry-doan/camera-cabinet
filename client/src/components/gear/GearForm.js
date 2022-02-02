@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear}) => {
-
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear, /*category*/}) => {
   
   const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
-  condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
+  condition: '', make: '', image: '', serial: '', /*category: ''*/ bought: '', quantity: ''})
 
 
   useEffect( () => {
@@ -23,7 +22,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     setAdd(false)
   }
     setGear({ name: '', desc: '', price: 0, model: '',
-    condition: '', make: '', image: '', serial: 0})
+    condition: '', make: '', image: '', serial: '', /*category: ''*/})
   }
 
  
@@ -57,7 +56,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
           required
           placeholder="Model"
         />
-         <label>
+         {/* <label>
           Category
           <select value={gear.category} onChange={(e) => setGear({...gear, category: e.target.value})}>
             <option value="camera">Camera</option>
@@ -65,7 +64,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
             <option value="lens">Lens</option>
             <option value="light">Light</option>
           </select>
-        </label>
+        </label> */}
         <label>Nickname:</label>
         <input 
           type="text"

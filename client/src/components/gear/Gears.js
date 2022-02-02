@@ -37,7 +37,6 @@ const Gears = ({ gears, getAllGears, addGear, kitId }) => {
 			}
 			<GearList gears={gears} kitId={params.kitId} />
       </>
-
     )
 }
 
