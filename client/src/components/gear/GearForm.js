@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, category, bought, quantity, setEdit, updateGear, addGear}) => {
   
-  const [gear, setGear] = useState({ name: '', desc: '', price: '', model: '',
+  const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
   condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
 
   useEffect( () => {
@@ -95,8 +95,8 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
           onChange={(e) => setGear({...gear, quantity: e.target.value})}
           optional
           placeholder="Optional"
-        />
-       <label>Date of Purchase:</label>
+        /> 
+        <label>Date of Purchase:</label>
         <input 
           name='bought' 
           value={gear.bought}

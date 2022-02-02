@@ -12,7 +12,7 @@ import GearShow from './components/gear/GearShow';
 import Gears from './components/gear/Gears';
 import { Container } from 'react-bootstrap';
 // import DocumentShow from './components/document/DocumentShow';
-
+import Categories from './components/category/Categories';
 
 const App = () => (
   <>
@@ -28,7 +28,7 @@ const App = () => (
             <Route path='/gears' element={<Gears />} />
             <Route path='/:kitId/gears/:gearId' element={<GearShow />} /> 
              {/* <Route path='/:gearId/document/:documentId' element={<DocumentShow />} /> */}
-
+            <Route path='/Categories' element={<Categories />} />
           </Route>
 
           <Route path='/login' element={<Login />} />

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_020306) do
+ActiveRecord::Schema.define(version: 2022_02_02_030639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2022_01_26_020306) do
   create_table "documents", force: :cascade do |t|
     t.datetime "bought"
     t.string "image"
-    t.bigint "gears_id", null: false
+    t.bigint "gear_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["gears_id"], name: "index_documents_on_gears_id"
+    t.index ["gear_id"], name: "index_documents_on_gear_id"
   end
 
   create_table "gears", force: :cascade do |t|
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_01_26_020306) do
     t.bigint "kit_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
     t.date "bought"
     t.string "quantity"
     t.index ["kit_id"], name: "index_gears_on_kit_id"
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 2022_01_26_020306) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
     t.index ["user_id"], name: "index_kits_on_user_id"
   end
 
@@ -90,7 +92,7 @@ ActiveRecord::Schema.define(version: 2022_01_26_020306) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "documents", "gears", column: "gears_id"
+  add_foreign_key "documents", "gears"
   add_foreign_key "gears", "kits"
   add_foreign_key "kits", "users"
 end

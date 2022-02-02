@@ -2,7 +2,7 @@ import CategoryShow from './CategoryShow';
 import { useEffect, useState } from 'react';
 // import { KitConsumer } from '../../providers/KitProvider';
 import { GearConsumer } from '../../providers/GearProvider';
-
+import { Header67 } from '../../styles/CategoryStyles';
 
 
 
@@ -14,6 +14,7 @@ const Categories = ({ gears, getAllGears}) => {
 
 	useEffect( () => {
 			getAllGears()
+			visibleItems()
 	}, [])
 
    
@@ -36,7 +37,12 @@ const	visibleItems = () => {
     
 	return (
 		<>
-			<h1>Categories</h1>
+			
+			<Header67>
+						
+          		Categories
+						
+						</Header67>
 			<CategoryShow filter={filter} setFilter={setFilter} />
 		</>
 	)

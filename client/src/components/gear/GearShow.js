@@ -12,7 +12,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
     const [editing, setEdit] = useState(false)
 		
     useEffect(() => {
-			axios.get(`/api/kits/${params.kitId}/gears/${params.gearId}/`)
+			axios.get(`/api/kits/${params.kitId}/gears/${params.gearId}`)
 				.then( res => setGear(res.data))
 				.catch( err => console.log(err))
     }, [])
@@ -30,8 +30,8 @@ const GearShow = ({ updateGear, deleteGear }) => {
 			<Header4>serial: {serial}</Header4>
 
             <Header4>category: {category}</Header4>
-            <Header4>bought: {bought}</Header4>
-            <Header4>quantity: {quantity}</Header4>
+            <Header4>bought: {bought}</Header4> 
+             <Header4>quantity: {quantity}</Header4>
 
       <Image src={image} roundedCircle style={{ width: '250px'}} />
       <Button variant="warning" onClick={() => setEdit(true)}>

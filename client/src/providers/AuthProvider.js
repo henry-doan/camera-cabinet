@@ -58,7 +58,8 @@ const AuthProvider = ({ children }) => {
       handleLogout: handleLogout,
       authenticated: user !== null, 
       setUser: (user) => setUser(user)
-      // updateUser: updateUser,
+      // updateUser: updateUser,   
+      // the line above this is what needs to be commented out
     }}>
       { children }
     </AuthContext.Provider>
