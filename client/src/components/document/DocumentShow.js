@@ -40,7 +40,7 @@ const DocumentShow = ({ updateDocument, deleteDocument }) => {
 								{image}
 							</Card.Text>
 							<Button variant="primary" onClick={() => setEditing(true)}>Edit</Button>
-							<Button variant="primary" onClick={() => deleteDocument(state.kitId, params.gearId, params.documentId)}>Delete</Button>
+							<Button variant="primary" onClick={() => deleteDocument(state.kitId, params.gearsId, params.documentId)}>Delete</Button>
 
 							<Modal show={editing} onHide={() => setEditing(false)}>
 								<Modal.Header closeButton>
