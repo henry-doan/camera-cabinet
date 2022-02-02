@@ -20,6 +20,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
 
     const { name, desc, price, model, condition, make, image, serial, category, bought, quantity, id} = gear
     return (
+
       <>
         <Header1>{name}</Header1>
         <Header3>Desc: {desc}</Header3>
@@ -41,7 +42,6 @@ const GearShow = ({ updateGear, deleteGear }) => {
       </Button>
       
       <Documents gearId={params.gearId} />
-
 
       <Modal show={editing} onHide={() => setEdit(false)}>
         <Modal.Header closeButton>

@@ -34,6 +34,7 @@ const Kits = ({ kits, getAllKits, addKit }) => {
 								<KitList kits={kits} />
 						</Container>
 					</DarkBackground>
+
         </>
     )
 }

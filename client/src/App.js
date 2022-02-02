@@ -20,6 +20,7 @@ const App = () => (
     <MainNavbar />
     <FetchUser>
       <Container>
+
         <>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -31,12 +32,15 @@ const App = () => (
               {/* <Route path='/gears' element={<Gears />} /> */}
               <Route path='/:kitId/gears/:gearId' element={<GearShow />} /> 
               <Route path='/:gearId/documents/:documentId' element={<DocumentShow />} />
+
             </Route>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/*' element={<Nomatch />} />
           </Routes>
+
         </>
+
       </Container>
     </FetchUser>
 

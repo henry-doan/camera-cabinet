@@ -8,6 +8,7 @@ import Gears from '../gear/Gears';
 import { Header1, Header3, Font, ShowPara, DarkBackground } from '../../styles/kitStyles';
 
 
+
 const KitShow = ({ updateKit, deleteKit }) => {
 
 
@@ -47,6 +48,7 @@ return (
           <Header1>{name}</Header1>
           <Header3>Description: {description}</Header3>
           <Header3>Item: {item} </Header3> 
+
         </ShowPara>
         <Image src={image} style={{ width: "400px"}}/>
 

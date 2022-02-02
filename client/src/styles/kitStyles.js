@@ -8,6 +8,7 @@ export const ShowPara = styled.div`
   color: #fe2712;
 `;
 
+
 export const MainContainer = styled.div`
   margin: 0 auto;
   max-width: 1280px;
@@ -26,6 +27,7 @@ export const WhiteFont = styled.div`
 `;
 export const Grid = styled.div`
   margin: 12rem auto;
+
   display: grid;
   grid-template-columns: 37% 37%;
   width: 1120px;
@@ -35,6 +37,7 @@ export const Grid = styled.div`
   justify-items: end;
   align-content: space-evenly;
   align-items: end;
+  border: solid white;
 `
 
 export const DarkBackground = styled.div`
@@ -75,6 +78,7 @@ export const Header1 = styled.div`
   margin: 30px;
   left: 30px;
 `;
+
 export const Header3 = styled.div`
   color: white;
 `;
@@ -92,6 +96,7 @@ export const Para1 = styled.div`
 export const Item = styled.div`
 
 `;
+
 export const KitContainer = styled.div`
   display: grid;
   justify-content: center;
