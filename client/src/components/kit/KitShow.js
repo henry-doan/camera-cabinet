@@ -53,13 +53,13 @@ return (
         <Image src={image} style={{ width: "400px"}}/>
 
         <Button 
-          variant="warning" 
+          variant="outline-light" 
           onClick={() => setEdit(true)}
         >
           Edit
         </Button>
         <Button 
-          variant="danger"
+          variant="outline-light"
           onClick={() => deleteKit(id)}
         >
           Delete

@@ -21,6 +21,17 @@ export const Header1 = styled.header`
   text-transform: uppercase;
 `
 
+export const Para = styled.p`
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  top: 200px;
+  left: 120px;
+  filter: drop-shadow(1px 2px #3d3d3d );
+  text-transform: uppercase;
+`
+
 export const ContentContainer = styled.div`
   position: absolute;
   left: 350px;

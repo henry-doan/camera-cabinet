@@ -30,10 +30,10 @@ const Gears = ({ gears, getAllGears, addGear, kitId }) => {
 							kitId={params.kitId} 
 							setAdd={setAdd}
 						/>
-						<Button variant="info" onClick={() => setAdd(false)}>Cancel</Button>    
+						<Button variant="outline-light" onClick={() => setAdd(false)}>Cancel</Button>    
 					</>
 						:
-						<Button variant="info" onClick={() => setAdd(true)}>Add Gear</Button>
+						<Button variant="outline-light" onClick={() => setAdd(true)}>Add Gear</Button>
 			}
 			<GearList gears={gears} kitId={params.kitId} />
       </>

@@ -2,20 +2,27 @@ import styled from 'styled-components';
 
 export const ShowPara = styled.div`
   position: relative;
-  left: 450px;
+  left: 900px;
   top: 270px;
   font-family: 'Montserrat', sans-serif;
   color: #fe2712;
 `;
 
+export const ImgContainer = styled.div`
+  display: flex;
+  position: absolute;
+  left: 520px;
+`;
 
 export const MainContainer = styled.div`
   margin: 0 auto;
   max-width: 1280px;
 `;
+
 export const Font = styled.div`
   font-family: 'Montserrat', sans-serif;
 `;
+
 export const RedFont = styled.div`
   color: #fe2712;
   
@@ -37,7 +44,6 @@ export const Grid = styled.div`
   justify-items: end;
   align-content: space-evenly;
   align-items: end;
-  border: solid white;
 `
 
 export const DarkBackground = styled.div`
