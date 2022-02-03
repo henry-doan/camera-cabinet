@@ -3,7 +3,7 @@ import { AuthConsumer } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Font } from '../../styles/kitStyles';
-import { NavBackground } from '../../styles/navbarStyles';
+import { NavBackground, NavBorder } from '../../styles/navbarStyles';
 
 const MainNavbar = ({ user, handleLogout }) => {
 
@@ -12,6 +12,7 @@ const MainNavbar = ({ user, handleLogout }) => {
     if (user) {
       return (
         <>
+        
           <NavBackground>
             <Font>
               <Nav.Link>
@@ -33,7 +34,7 @@ const MainNavbar = ({ user, handleLogout }) => {
                   color: 'white', 
                   textDecoration: 'none'
                   }}>
-                    About Us
+                    Our Team
                 </Link>
               </Nav.Link>
             </Font>

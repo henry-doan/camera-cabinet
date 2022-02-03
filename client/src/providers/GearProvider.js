@@ -18,6 +18,7 @@ const GearProvider = ({ children }) => {
 
   const addGear = (kitId, gear) => {
     axios.post(`/api/kits/${kitId}/gears`, { gear } )
+    // axios.post('/api/gears', { gear })
       .then ( res => setGears([...gears, res.data]))
       .catch( err => console.log(err))
   }

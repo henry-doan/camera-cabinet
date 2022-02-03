@@ -54,8 +54,6 @@ export const Grid = styled.div`
 
 export const DarkBackground = styled.div`
 background: #292929;
-height: 100vh;
-width: 100%;
 overflow: hidden;
 position: absolute;
 left: 0%;
@@ -84,7 +82,7 @@ left: 0%;
 // `;
 
 export const Header1 = styled.div`
-  color: white;
+  color: Black;
   font-size: 40px;
   font-family: 'Montserrat', sans-serif;
   margin: 30px;
