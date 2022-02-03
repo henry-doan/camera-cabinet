@@ -6,10 +6,14 @@ import GearForm from './GearForm';
 import { useParams } from 'react-router-dom';
 import { Font } from '../../styles/gearStyles';
 
-const Gears = ({ gears, getAllGears, addGear, kitId }) => {
+const Gears = ({ gears, getAllGears, addGear, kitId, deleteGear}) => {
   const [adding, setAdd] = useState(false)
   const params = useParams()
   const [setShow] = useState(false);
+
+  useEffect( () => {
+    getAllGears()
+}, [])
   
   return (
     <>
@@ -20,6 +24,7 @@ const Gears = ({ gears, getAllGears, addGear, kitId }) => {
 							addGear={addGear} 
 							kitId={params.kitId} 
 							setAdd={setAdd}
+              deleteGear={deleteGear}
 						/>
 
 					</>

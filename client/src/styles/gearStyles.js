@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Font = styled.p`
   font-size: 17px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 
 `
 
 
@@ -25,9 +25,9 @@ line-height: 64px;
 color: #FFFFFF;
 `
 
-export const Font = styled.div`
-  font-family: 'Montserrat', sans-serif;
-`
+// export const Font = styled.div`
+//   font-family: 'Montserrat';
+// `
 
 
 export const Background = styled.div`
