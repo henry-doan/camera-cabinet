@@ -6,23 +6,12 @@ import GearForm from './GearForm';
 import { useParams } from 'react-router-dom';
 
 const Gears = ({ gears, getAllGears, addGear, kitId }) => {
-    const [adding, setAdd] = useState(false)
-
+  const [adding, setAdd] = useState(false)
   const params = useParams()
-
-  useEffect( () => {
-    getAllGears(params.kitId)
-  }, [])
-
+  const [setShow] = useState(false);
+  
   return (
     <>
-
-			<h1 style={{ 
-				color: "white",
-				}}>
-				All Gear
-			</h1>
-
 			{ adding ?
 					<>
 						<GearForm 
@@ -30,15 +19,17 @@ const Gears = ({ gears, getAllGears, addGear, kitId }) => {
 							kitId={params.kitId} 
 							setAdd={setAdd}
 						/>
-						<Button variant="info" onClick={() => setAdd(false)}>Cancel</Button>    
 					</>
 						:
-						<Button variant="info" onClick={() => setAdd(true)}>Add Gear</Button>
-			}
+            
+						<Button variant="primary" onClick={() => setAdd(true)}>Add Gear</Button>
+					
+  }
 			<GearList gears={gears} kitId={params.kitId} />
       </>
     )
 }
+
 
 const ConnectedGears = (props) => (
   <GearConsumer>

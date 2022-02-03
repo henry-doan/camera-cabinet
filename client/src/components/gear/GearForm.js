@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import { Header1, Font, Backdrop, P1, P2, P3, P4, P5, Container2,  } from '../../styles/gearStyles.js';
+import { Form, Modal, Button, Container, ListGroup, ListGroupItem } from 'react-bootstrap';
+
+
 
 const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear, /*category*/}) => {
   
@@ -11,6 +15,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
       setGear({ name, desc, price, model, condition, make, image, serial,bought,quantity,category})
     }
   }, [])
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -25,106 +30,244 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     condition: '', make: '', image: '', serial: '', /*category: ''*/})
   }
 
- 
+     const [show, setShow] = useState(false); 
+
+  
   return (
+   
     <>
-      <form onSubmit={handleSubmit}>
-      <label>Image of Gear:</label>
-        <input 
-          type="text"
-          name='image' 
+    <Button variant="primary" onClick={() => setShow(true)}>Add gear</Button>
+    <Modal
+    size="xl"
+    show={show}
+    >
+  
+    {/* <Modal.Dialog> */}
+      <Backdrop>
+      <Modal.Header>
+      <Modal.Title>
+      	<Header1>
+          <P2>
+			<Font>
+			New Gear
+			</Font>
+      </P2>
+		</Header1>
+    </Modal.Title>
+    </Modal.Header>
+
+        <Modal.Body>
+      <Form onSubmit={handleSubmit}>
+
+
+        <Form.Group controlId="formFile" Classname="mb-3">
+        <P3>
+          <Font>
+          <Form.Label>Gear image</Form.Label>
+          </Font>
+          </P3>
+          <Form.Control 
+          type="file"
           value={gear.image}
           onChange={(e) => setGear({...gear, image: e.target.value})}
           required
           placeholder="Image"
           />
-        <label>Manufacturer:</label>
-        <input 
-          type="text"
-          name='make' 
+
+        </Form.Group>
+
+        <Form.Group>
+          <P3>
+            <Font>
+        <Form.Label>Manufacturer</Form.Label>
+            </Font>
+          </P3>
+          
+        <Form.Control 
+          type="text" 
           value={gear.make}
           onChange={(e) => setGear({...gear, make: e.target.value})}
           required
-          placeholder="Make"
-        />
-       <label>Model No.:</label>
-        <input 
-          type="text"
-          name='Model' 
+          placeholder= "Input"
+          style= {{ color: "red" }}
+          />
+          
+        </Form.Group>
+        <br/>
+     
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Model No.</Form.Label>
+            </Font>
+          </P3>
+          <Form.Control
+          type="text" 
           value={gear.model}
           onChange={(e) => setGear({...gear, model: e.target.value})}
           required
-          placeholder="Model"
-        />
-         {/* <label>
-          Category
-          <select value={gear.category} onChange={(e) => setGear({...gear, category: e.target.value})}>
-            <option value="camera">Camera</option>
-            <option value="audio">Audio</option>
-            <option value="lens">Lens</option>
+          placeholder= "Input"
+          style= {{ color: "red"}}
+          />
+        </Form.Group>
+        
+   
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Category</Form.Label>
+            </Font>
+          </P3>
+          <Form.Select>
+            <option>Select a category</option>
+             <option value="camera">Camera</option>
+             <option value="audio">Audio</option>
+             <option value="lens">Lens</option>
             <option value="light">Light</option>
-          </select>
-        </label> */}
-        <label>Nickname:</label>
-        <input 
-          type="text"
-          name='name' 
+            onChange={(e) => setGear({...gear, category: e.target.value})}
+
+            {/* style= {{ color: "red"}} */}
+          </Form.Select>
+        </Form.Group>
+
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Nickname</Form.Label>
+            </Font>
+          </P3>
+          <Form.Control
+          type="text" 
           value={gear.name}
           onChange={(e) => setGear({...gear, name: e.target.value})}
-          placeholder="Name"
-        />
-        <h1>Purchase Information</h1>
-        <label>Price Paid:</label>
-        <input 
-        type="text"
-          name='price'
+          optional
+          placeholder= "Optional"
+          style= {{ color: "red"}}
+          />
+        </Form.Group>
+
+
+        <Header1>
+          <Font>
+          Purchase Information
+          </Font>
+        </Header1>
+     
+
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Price Paid</Form.Label>
+            </Font>
+          </P3>
+          <Form.Control
+          type="text" 
           value={gear.price}
           onChange={(e) => setGear({...gear, price: e.target.value})}
-          placeholder="Price"
-        />
-        <label>Used:</label>
-        <input 
-        type="text"
-          name='condition' 
+          optional
+          placeholder= "Optional"
+          style= {{ color: "red"}}
+          />
+        </Form.Group>
+
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Condition</Form.Label>
+            </Font>
+          </P3>
+          <Form.Control
+          type="text" 
           value={gear.condition}
           onChange={(e) => setGear({...gear, condition: e.target.value})}
-          placeholder="Condition"
-        />
-       <label>Quantity:</label>
-        <input 
-        type="text"
-          name='quantity'
+          optional
+          placeholder= "Optional"
+          style= {{ color: "red"}}
+          />
+        </Form.Group>
+
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Quantity</Form.Label>
+            </Font>
+          </P3>
+          <Form.Control
+          type="text" 
           value={gear.quantity}
           onChange={(e) => setGear({...gear, quantity: e.target.value})}
-          placeholder="Quantity"
-        />
-       <label>Date of Purchase:</label>
-        <input 
-          type="date"
-          name='bought' 
+          optional
+          placeholder= "Optional"
+          style= {{ color: "red"}}
+          />
+        </Form.Group>
+
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Date of Purchase</Form.Label>
+            </Font>
+          </P3>
+          <Form.Control
+          type="text" 
           value={gear.bought}
           onChange={(e) => setGear({...gear, bought: e.target.value})}
-          placeholder="Bought"
-        />
-       <label>Serial Number:</label>
-        <input 
-          type="text"
-          name='serial' 
+          optional
+          placeholder= "Optional"
+          style= {{ color: "red"}}
+          />
+        </Form.Group>
+
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Serial Number</Form.Label>
+            </Font>
+          </P3>
+          <Form.Control
+          type="text" 
           value={gear.serial}
           onChange={(e) => setGear({...gear, serial: e.target.value})}
-          placeholder="Serial"
-        />
-        <label>Notes:</label>
-        <input 
-          type="text"
-          name='desc'
+          optional
+          placeholder= "Optional"
+          style= {{ color: "red"}}
+          />
+        </Form.Group>
+
+        <Form.Group>
+          <P3>
+            <Font>
+              <Form.Label>Notes:</Form.Label>
+            </Font>
+          </P3>
+          <Form.Control
+          as="textarea" 
           value={gear.desc}
           onChange={(e) => setGear({...gear, desc: e.target.value})}
-          placeholder="Description"
-        />
-        <button type='submit'>Submit</button>
-      </form>
+          optional
+          placeholder= "Optional"
+          rows={4}
+          style= {{ color: "red"}}
+          />
+        </Form.Group>
+
+        <Button variant="secondary" onClick={() => setAdd(false)}>
+              Close
+          </Button>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+        </Form>
+        {/* <Modal.Footer>
+         
+        </Modal.Footer>
+      {/* </Form.Group> */}
+      </Modal.Body> 
+      </Backdrop>
+      {/* </Modal.Dialog> */}
+    </Modal>
     </>
+    
   )
 }
 

@@ -1,5 +1,5 @@
 class Api::GearsController < ApplicationController
-  before_action :set_kit
+  # before_action :set_kit
   before_action :set_gear, only: [:show, :update, :destroy]
 
   def index 
@@ -34,12 +34,12 @@ class Api::GearsController < ApplicationController
 
   private
     def gear_params
-      params.require(:gear).permit(:name, :desc, :image, :price, :model, :condition, :make, :serial, :category, :bought, :quantity)
+      params.require(:gear).permit(:image, :model, :make, :category)
     end
 
-    def set_kit
-      @kit = Kit.find(params[:kit_id])
-    end
+    # def set_kit
+    #   @kit = Kit.find(params[:kit_id])
+    # end
 
     def set_gear
       @gear = @kit.gears.find(params[:id])
