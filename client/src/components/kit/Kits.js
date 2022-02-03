@@ -14,7 +14,7 @@ const Kits = ({ kits, getAllKits, addKit }) => {
 
     return (
         <>
-					<DarkBackground>
+					
 						<Container>
 							<Header1>
 									Your Kits
@@ -33,7 +33,7 @@ const Kits = ({ kits, getAllKits, addKit }) => {
 								}
 								<KitList kits={kits} />
 						</Container>
-					</DarkBackground>
+					
 
         </>
     )

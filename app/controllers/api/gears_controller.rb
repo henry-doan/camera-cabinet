@@ -35,7 +35,9 @@ class Api::GearsController < ApplicationController
 
   private
     def gear_params
+
       params.require(:gear).permit(:image, :model, :make, :category, :name, :desc, :condition, :bought, :quantity, :price, :serial)
+
     end
 
     def set_kit
