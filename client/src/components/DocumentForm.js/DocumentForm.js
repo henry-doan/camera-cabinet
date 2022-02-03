@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const DocumentForm = ({ addDocument, id, bought, image, setEdit, updateDocument}) => {
+const DocumentForm = ({ gearId, kitId, addDocument, id, bought, image, setEditing, setAdd, updateDocument}) => {
   const [document, setDocument] = useState({ bought: '', image: ''})
 
   useEffect( () => {
@@ -13,10 +13,11 @@ const DocumentForm = ({ addDocument, id, bought, image, setEdit, updateDocument}
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-    updateDocument(id, document)
-    setEdit(false)
+    updateDocument(kitId, gearId, id, document)
+    setEditing(false)
   } else {
-    addDocument(document)
+    addDocument(kitId, gearId, document)
+    setAdd(false)
   }
     setDocument({ bought: '',  image: ''})
   }
@@ -24,9 +25,10 @@ const DocumentForm = ({ addDocument, id, bought, image, setEdit, updateDocument}
   return (
     <>
       <Form onSubmit={handleSubmit}>
-      <label>Purchased:</label>
+      <label>Bought:</label>
         <input 
-          name="purchased"
+          type="date"
+          name="bought"
           value={document.bought}
           onChange={(e) => setDocument({...document, bought: e.target.value})}
           required
@@ -34,6 +36,7 @@ const DocumentForm = ({ addDocument, id, bought, image, setEdit, updateDocument}
         />
          <label>Image:</label>
         <input 
+          type="text"
           name="image"
           value={document.image}
           onChange={(e) => setDocument({...document, image: e.target.value})}

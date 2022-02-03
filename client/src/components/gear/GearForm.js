@@ -4,16 +4,15 @@ import { Form, Modal, Button, Container, ListGroup, ListGroupItem } from 'react-
 
 
 
-
-
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, category, bought, quantity, setEdit, updateGear, addGear}) => {
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear, /*category*/}) => {
   
-  const [gear, setGear] = useState({ name: '', desc: '', price: '', model: '',
-  condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
+  const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
+  condition: '', make: '', image: '', serial: '', /*category: ''*/ bought: '', quantity: ''})
+
 
   useEffect( () => {
     if (id) {
-      setGear({ name, desc, price, model, condition, make, image, serial, category, bought, quantity})
+      setGear({ name, desc, price, model, condition, make, image, serial,bought,quantity,category})
     }
   }, [])
 
@@ -28,7 +27,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     setAdd(false)
   }
     setGear({ name: '', desc: '', price: 0, model: '',
-    condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
+    condition: '', make: '', image: '', serial: '', /*category: ''*/})
   }
 
      const [show, setShow] = useState(false); 
@@ -37,16 +36,12 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
   return (
    
     <>
-
     <Button variant="primary" onClick={() => setShow(true)}>Add gear</Button>
     <Modal
     size="xl"
     show={show}
-    
-
     >
   
-
     {/* <Modal.Dialog> */}
       <Backdrop>
       <Modal.Header>
@@ -76,8 +71,9 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
           value={gear.image}
           onChange={(e) => setGear({...gear, image: e.target.value})}
           required
-          placeholder="Gear image"
+          placeholder="Image"
           />
+
         </Form.Group>
 
         <Form.Group>
@@ -270,7 +266,6 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
       </Backdrop>
       {/* </Modal.Dialog> */}
     </Modal>
-  
     </>
     
   )

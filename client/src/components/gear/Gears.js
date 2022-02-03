@@ -5,18 +5,13 @@ import { Button } from 'react-bootstrap';
 import GearForm from './GearForm';
 import { useParams } from 'react-router-dom';
 
-
-
-const Gears = ({ gears, getAllGears, addGear }) => {
-  const [adding, setAdd] = useState(false);
-
+const Gears = ({ gears, getAllGears, addGear, kitId }) => {
+  const [adding, setAdd] = useState(false)
   const params = useParams()
-
   const [setShow] = useState(false);
   
   return (
     <>
-
 			{ adding ?
 					<>
 						<GearForm 
@@ -26,9 +21,10 @@ const Gears = ({ gears, getAllGears, addGear }) => {
 						/>
 					</>
 						:
+            
 						<Button variant="primary" onClick={() => setAdd(true)}>Add Gear</Button>
 					
-}
+  }
 			<GearList gears={gears} kitId={params.kitId} />
       </>
     )

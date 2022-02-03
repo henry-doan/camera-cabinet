@@ -22,7 +22,7 @@ const DocumentProvider = ({ children }) => {
         navigate(`/${kitId}/gears/${gearId}`)
         setDocuments([...documents, res.data])
       })
-        .catch( err => console.log(err))
+      .catch( err => console.log(err))
   }
 
   const updateDocument = (kitId, gearId, id, document) => {

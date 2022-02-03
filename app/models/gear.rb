@@ -4,6 +4,5 @@ class Gear < ApplicationRecord
   has_many :documents, dependent: :destroy
 
   validates :model, :make, :image, :category, presence: true
-  # validates :name, :desc, :price, :condition, :serial, :bought, :quantity
-
+  # validates :name, :desc, :price, :condition, :serial, :bought, :quanti
 end
