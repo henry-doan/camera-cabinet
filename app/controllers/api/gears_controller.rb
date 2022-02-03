@@ -1,5 +1,5 @@
 class Api::GearsController < ApplicationController
-  # before_action :set_kit
+  before_action :set_kit
   before_action :set_gear, only: [:show, :update, :destroy]
 
   def index 
@@ -15,6 +15,7 @@ class Api::GearsController < ApplicationController
     if @gear.save
       render json: @gear
     else
+      # binding.pry
       render json: { errors: @gear.errors }, status: :unprocessable_entity
     end
   end
@@ -34,12 +35,12 @@ class Api::GearsController < ApplicationController
 
   private
     def gear_params
-      params.require(:gear).permit(:image, :model, :make, :category)
+      params.require(:gear).permit(:image, :model, :make, :category, :name, :desc, :condition, :bought, :quantity, :price, :serial)
     end
 
-    # def set_kit
-    #   @kit = Kit.find(params[:kit_id])
-    # end
+    def set_kit
+      @kit = Kit.find(params[:kit_id])
+    end
 
     def set_gear
       @gear = @kit.gears.find(params[:id])

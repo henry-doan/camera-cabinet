@@ -14,7 +14,7 @@ const Register = ({ handleRegister, updateUser, id, setEdit, email, password, pa
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (setEdit(true)) {
+    if (setEdit) {
       updateUser(id, user)
       setEdit(false)
     } if (user.password === user.passwordConfirmation) {
