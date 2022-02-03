@@ -15,6 +15,7 @@ class Api::GearsController < ApplicationController
     if @gear.save
       render json: @gear
     else
+      # binding.pry
       render json: { errors: @gear.errors }, status: :unprocessable_entity
     end
   end
@@ -34,7 +35,9 @@ class Api::GearsController < ApplicationController
 
   private
     def gear_params
-      params.require(:gear).permit(:name, :desc, :image, :price, :model, :condition, :make, :serial,  :bought, :quantity)
+
+      params.require(:gear).permit(:image, :model, :make, :category, :name, :desc, :condition, :bought, :quantity, :price, :serial)
+
     end
 
     def set_kit
