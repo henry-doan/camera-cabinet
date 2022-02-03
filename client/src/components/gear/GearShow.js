@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Image, Button, Modal } from 'react-bootstrap';
 import GearForm from './GearForm';
 import { Header1, Header3, Header4, Para1 } from '../../styles/kitStyles';
-import Documents from '../document/Documents';
+
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
@@ -41,7 +41,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
         Delete
       </Button>
       
-      <Documents gearId={params.gearId} />
+
 
       <Modal show={editing} onHide={() => setEdit(false)}>
         <Modal.Header closeButton>

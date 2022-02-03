@@ -4,15 +4,15 @@ import { Form, Modal, Button, Container, ListGroup, ListGroupItem } from 'react-
 
 
 
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear, /*category*/}) => {
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, bought, quantity, category, setEdit, updateGear, addGear, /*category*/}) => {
   
   const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
-  condition: '', make: '', image: '', serial: '', /*category: ''*/ bought: '', quantity: ''})
+  condition: '', make: '', image: '', serial: '' , bought: '', quantity: '', category: ''})
 
 
   useEffect( () => {
     if (id) {
-      setGear({ name, desc, price, model, condition, make, image, serial,bought,quantity,category})
+      setGear({ name, desc, price, model, condition, make, image, serial, bought, quantity, category})
     }
   }, [])
 
@@ -40,6 +40,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     <Modal
     size="xl"
     show={show}
+    
     >
   
     {/* <Modal.Dialog> */}
@@ -118,13 +119,13 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
               <Form.Label>Category</Form.Label>
             </Font>
           </P3>
-          <Form.Select>
+          <Form.Select  onChange={(e) => setGear({...gear, category: e.target.value})}>
             <option>Select a category</option>
              <option value="camera">Camera</option>
              <option value="audio">Audio</option>
              <option value="lens">Lens</option>
             <option value="light">Light</option>
-            onChange={(e) => setGear({...gear, category: e.target.value})}
+           
 
             {/* style= {{ color: "red"}} */}
           </Form.Select>
