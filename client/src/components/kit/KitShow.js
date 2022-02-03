@@ -5,7 +5,7 @@ import { Image, Button } from 'react-bootstrap';
 import KitForm from './KitForm';
 import { KitConsumer } from '../../providers/KitProvider';
 import Gears from '../gear/Gears';
-import { Header1, Header3, Font, ShowPara, DarkBackground } from '../../styles/kitStyles';
+import { Header1, Header3, Font, ShowPara, DarkBackground, ImgContainer, CompContainer, BtnContainer } from '../../styles/kitStyles';
 
 
 
@@ -35,7 +35,7 @@ return (
           updateKit={updateKit} 
         />
         <Button 
-        variant="link" 
+        variant="outline-light" 
         onClick={() => 
         setEdit(false)}>
         Cancel
@@ -47,26 +47,31 @@ return (
         <ShowPara>
           <Header1>{name}</Header1>
           <Header3>Description: {description}</Header3>
-          <Header3>Item: {item} </Header3> 
 
         </ShowPara>
-        <Image src={image} style={{ width: "400px"}}/>
-
-        <Button 
-          variant="outline-light" 
-          onClick={() => setEdit(true)}
-        >
-          Edit
-        </Button>
-        <Button 
-          variant="outline-light"
-          onClick={() => deleteKit(id)}
-        >
-          Delete
-        </Button>
+        <ImgContainer>
+          <Image src={image} style={{ width: "400px"}}/>
+        </ImgContainer>
+        <BtnContainer>
+          <Button 
+            variant="outline-light" 
+            onClick={() => setEdit(true)}
+          >
+            Edit
+          </Button>
+          
+          <Button 
+            variant="outline-light"
+            onClick={() => deleteKit(id)}
+          >
+            Delete
+          </Button>
+        </BtnContainer>
       </>
       }
-      <Gears kitId={id} />
+        <CompContainer>
+          <Gears kitId={id} />
+        </CompContainer>
       </DarkBackground>
     </>
   )

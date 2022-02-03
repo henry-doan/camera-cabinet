@@ -4,6 +4,7 @@ import GearList from './GearList';
 import { Button } from 'react-bootstrap';
 import GearForm from './GearForm';
 import { useParams } from 'react-router-dom';
+import { Font } from '../../styles/gearStyles';
 
 const Gears = ({ gears, getAllGears, addGear, kitId }) => {
     const [adding, setAdd] = useState(false)
@@ -16,12 +17,11 @@ const Gears = ({ gears, getAllGears, addGear, kitId }) => {
 
   return (
     <>
+			<Font>
+				<h1 style={{color: "white"}}>All Gear</h1>
+			</Font>
 
-			<h1 style={{ 
-				color: "white",
-				}}>
-				All Gear
-			</h1>
+			<GearList gears={gears} kitId={params.kitId} />
 
 			{ adding ?
 					<>
@@ -35,7 +35,6 @@ const Gears = ({ gears, getAllGears, addGear, kitId }) => {
 						:
 						<Button variant="outline-light" onClick={() => setAdd(true)}>Add Gear</Button>
 			}
-			<GearList gears={gears} kitId={params.kitId} />
       </>
     )
 }

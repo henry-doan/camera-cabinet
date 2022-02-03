@@ -17,7 +17,7 @@ const MainNavbar = ({ user, handleLogout }) => {
               <Nav.Link>
                 <Link to='/profile' 
                   style={{ 
-                  color: "#fe2712", 
+                  color: 'white', 
                   textDecoration: 'none'
                   }}>
                     Profile
@@ -30,7 +30,7 @@ const MainNavbar = ({ user, handleLogout }) => {
               <Nav.Link>
                 <Link to='/about' 
                   style={{ 
-                  color: "#fe2712", 
+                  color: 'white', 
                   textDecoration: 'none'
                   }}>
                     About Us
@@ -43,7 +43,7 @@ const MainNavbar = ({ user, handleLogout }) => {
               <Nav.Link>
                 <Link to='/kits'
                   style={{ 
-                  color: "#fe2712", 
+                  color: 'white', 
                   textDecoration: 'none'
                   }}>
                     Kits
@@ -67,7 +67,7 @@ const MainNavbar = ({ user, handleLogout }) => {
             <Nav.Link onClick={ () => handleLogout() }>
               <Link to="/logout" 
                 style={{ 
-                color: "#fe2712", 
+                color: 'white', 
                 textDecoration: 'none'
                 }}>
                 Logout
@@ -86,7 +86,7 @@ const MainNavbar = ({ user, handleLogout }) => {
               <Nav.Link>
                 <Link to='/login' 
                   style={{ 
-                  color: "#fe2712", 
+                  color: 'white', 
                   textDecoration: 'none'
                   }}>
                     Login
@@ -98,8 +98,8 @@ const MainNavbar = ({ user, handleLogout }) => {
             <Font>
               <Nav.Link>
                 <Link to='/register' 
-                  style={{ color: 
-                  "#fe2712", 
+                  style={{ 
+                  color: 'white', 
                   textDecoration: 'none'
                   }}>
                     Register
@@ -121,7 +121,7 @@ const MainNavbar = ({ user, handleLogout }) => {
               <Navbar.Brand className="mr-auto">
                 <Link to="/" 
                   style={{ 
-                  color: "#fe2712", 
+                  color: 'white', 
                   textDecoration: 'none'
                   }}>
                   Camera Cabinet

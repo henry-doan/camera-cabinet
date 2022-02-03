@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-
 import { Grid, Font, DarkBackground } from '../../styles/kitStyles';
-
 import { Container } from 'react-bootstrap';
 
 const KitList = ({ kits }) => {

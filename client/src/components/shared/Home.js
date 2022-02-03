@@ -1,14 +1,17 @@
-import { RedBackground, Header1, ContentContainer, Para } from '../../styles/homePageStyles';
+import { Background, Header1, ContentContainer, ContentContainer2, Para } from '../../styles/homePageStyles';
 
 const Home = ({}) => (
   <>
-    <RedBackground>
-      <Header1> Hello! </Header1>
-      <Para>We are Camera Cabinet. Build virtual camera kits and ease the burden of organizing.</Para>
+    <Background>
+      <Header1> Camera Cabinet </Header1>
+      <Para>Make sure you know what gear you have so <br /> you don't forget the essentials at your next <br />shoot. Sign up today, it's free!</Para>
       <ContentContainer>
-        <img src='/assets/images/1.png' alt="logo" width='700px'/>
+        <img src='/assets/images/camcab.jpeg' alt="logo" width='450px'/>
       </ContentContainer>
-    </RedBackground>
+      <ContentContainer2>
+        <img src='/assets/images/2.png' alt="logo" width='150px'/>
+      </ContentContainer2>
+    </Background>
   </>
 )
 
