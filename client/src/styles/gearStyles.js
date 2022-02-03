@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 
+export const Font = styled.p`
+  font-size: 17px;
+  font-family: 'Montserrat', sans-serif;
+`
+
+
 
 export const Header1 = styled.div`
 // position: absolute;
@@ -99,3 +105,4 @@ font-size: 24px;
 line-height: 25px;
 color: #E61F25;
 `
+

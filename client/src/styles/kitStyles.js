@@ -2,20 +2,33 @@ import styled from 'styled-components';
 
 export const ShowPara = styled.div`
   position: relative;
-  left: 450px;
-  top: 10px;
+  left: 830px;
+  top: 100px;
   font-family: 'Montserrat', sans-serif;
   color: #fe2712;
 `;
 
+export const ImgContainer = styled.div`
+  position: absolute;
+  left: 300px;
+  top: 100px;
+`;
+
+export const CompContainer = styled.div`
+  position: absolute;
+  top: 450px;
+  left: 300px;
+`
 
 export const MainContainer = styled.div`
   margin: 0 auto;
   max-width: 1280px;
 `;
+
 export const Font = styled.div`
   font-family: 'Montserrat', sans-serif;
 `;
+
 export const RedFont = styled.div`
   color: #fe2712;
   
@@ -37,7 +50,6 @@ export const Grid = styled.div`
   justify-items: end;
   align-content: space-evenly;
   align-items: end;
-  border: solid white;
 `
 
 export const DarkBackground = styled.div`
@@ -91,10 +103,6 @@ export const Para1 = styled.div`
   left: 40px;
 `;
 
-export const Item = styled.div`
-
-`;
-
 export const KitContainer = styled.div`
   display: grid;
   justify-content: center;
@@ -104,4 +112,10 @@ export const KitContainer = styled.div`
 
 export const FormContainer = styled.div`
   width: 50vw;
+`
+
+export const BtnContainer = styled.div`
+  position: absolute;
+  top: 390px;
+  left: 300px;
 `

@@ -1,17 +1,21 @@
 import { Row, Col, Card, Button, Container, ListGroup } from 'react-bootstrap';
+import { Font } from '../../styles/gearStyles';
 import { Link } from 'react-router-dom';
 
 const GearList = ({ gears, kitId }) => {
     return(
         <>
-        {/* <ListGroup>
+          <Container>
+            <Font>
             { gears.map( g =>
-                <Link to={`/${kitId}/gears/${g.id}`}>
-                    <ListGroup.Item>{g.name}</ListGroup.Item>
+                <Link to={`/${kitId}/gears/${g.id}`} style={{ color: "#fe2712", textDecoration: 'none'}}>
+                  <p>{g.name}</p>
+                  {/* <img src={g.image} style={{ width: '200px'}}></img> */}
                 </Link>
             )}
-        </ListGroup> */}
-          <Container>
+            </Font>
+          </Container>
+          {/* <Container>
             <Row xs={1} md={3}>
             { gears.map( g => 
                 <Col>
@@ -24,16 +28,16 @@ const GearList = ({ gears, kitId }) => {
                       <Card.Text>
                          Description: {g.desc}
                       </Card.Text>
-                        <Link to={`/${kitId}/gears/${g.id}`}>
+                        <Link to={`/kits/${kitId}/gears/${g.id}`}>
                           <Button type="submit" variant="primary">Show</Button>
                         </Link>
                     </Card.Body>
                   </Card>
-                </Col>
-                )
+                </Col> */}
+                {/* )
               }
-            </Row>
-          </Container>
+            </Row> */}
+          {/* </Container> */}
      </>
     )
 }

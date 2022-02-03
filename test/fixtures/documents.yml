@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  bought: 2022-02-01 20:58:56
+ bought: 2022-02-01 19:48:08
   image: MyString
   gear: one
 
