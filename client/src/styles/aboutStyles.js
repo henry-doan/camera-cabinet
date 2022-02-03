@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
+export const DarkBackground = styled.body`
+background: #292929;
 
+`
 
 
 
@@ -15,9 +18,21 @@ export const Header1 = styled.div`
    }
   `
   export const Header2 = styled.div`
-  color: white;
+  color: #292929;
   font-size: 25px;
   opacity: 0%;
+  font: Montserrat;
+  `
+  export const Header3 = styled.div`
+  color: white;
+  font-size: 48px;
+  font: Montserrat;
+  margin: auto;
+ width: 18%;
+ padding: 10px;
+ font-weight: 700;
+ 
+   
   `
 
   export const Bgcolor = styled.div`
@@ -50,7 +65,9 @@ export const Header1 = styled.div`
  padding: 10px;
   flex-grow: 1;
   `
-  
+  export const Padding = styled.div`
+  padding: 10px;
+  `
 
 export const Image1 = styled.div` {
   
@@ -69,20 +86,21 @@ export const Image1 = styled.div` {
   &:hover ${Header2} {
     transition: .5s ease;
     opacity: 200%;
-    color: #292929 ;
+    color:  White;
   }
 `
 
 export const Iborder = styled.div`
 float: left;
-width:  400px;
-height: 400px;
+width:  200px;
+height: 200px;
 object-fit: cover;
 `
   
 
  export const TopMargin = styled.div`
  margin: 5rem auto;
+ background: #292929;
  `
 
 export const Middle = styled.div`

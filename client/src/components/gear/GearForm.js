@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear, /*category*/}) => {
+const GearForm = ({bought,quantity, kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, setEdit, updateGear, addGear, /*category*/}) => {
   
   const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
-  condition: '', make: '', image: '', serial: '', /*category: ''*/ bought: '', quantity: ''})
+  condition: '', make: '', image: '', serial: '', /*category: ''*/ bought: '', quantity: '', })
 
 
   useEffect( () => {
     if (id) {
-      setGear({ name, desc, price, model, condition, make, image, serial,bought,quantity,category})
+      setGear({ name, desc, price, model, condition, make, image, serial,bought,quantity,/*category*/})
     }
   }, [])
 
@@ -22,7 +22,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     setAdd(false)
   }
     setGear({ name: '', desc: '', price: 0, model: '',
-    condition: '', make: '', image: '', serial: '', /*category: ''*/})
+    condition: '', make: '', image: '', serial: '', /*category: ''*/ bought: '', quantity: '', category: ''})
   }
 
  

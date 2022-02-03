@@ -42,8 +42,6 @@ export const Grid = styled.div`
 
 export const DarkBackground = styled.div`
 background: #292929;
-height: 100vh;
-width: 100%;
 overflow: hidden;
 position: absolute;
 left: 0%;

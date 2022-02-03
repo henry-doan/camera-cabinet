@@ -25,31 +25,7 @@ const KitForm = ({ addKit, id, name, description, image,/* item,  */updateKit, s
 
   return (
     <>
-      {/* <form onSubmit={handleSubmit}>
-        <label>Kit Name:</label>
-        <input 
-          name='Kit Name'
-          value={kit.name}
-          onChange={(e) => setKit({ ...kit, name: e.target.value })}
-          required
-        />
-        <label>Kit Description:</label>
-        <textarea
-          name='Kit Description'
-          value={kit.description}
-          onChange={(e) => setKit({ ...kit, description: e.target.value })}
-          required
-        ></textarea>
-         <label>Kit Image:</label>
-        <input 
-          name='Url of image NOT REQUIRED'
-          value={kit.image}
-          onChange={(e) => setKit({ ...kit, image: e.target.value })}
-        /> */}
-        
-         {/* <label>Kit Item Count:</label> */}
-        {/* <button type="submit">Submit</button>
-      </form> */}
+      
       <FormContainer>
         <Container>
           <WhiteFont>
