@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Card , Button} from 'react-bootstrap';
 import { AuthConsumer } from '../../providers/AuthProvider';
-import Moment from 'react-moment';
-import Register from '../auth/Register'
+import ProfileForm from './ProfileForm'
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import {Center, TextC } from '../../styles/profileStyles';
 
 
 
@@ -15,7 +15,7 @@ const Profile = ({ id, fname, lname, age, email, image, updateUser}) => {
   const [editing, setEdit] = useState(false)
 
   useEffect( () => {
-    axios.get(`/api/auth/edit/`)
+    axios.get(`/api/auth/edit`)
       .then( res => setUser(res.data))
       .catch( err => console.log(err))
   }, [])
@@ -27,38 +27,36 @@ const Profile = ({ id, fname, lname, age, email, image, updateUser}) => {
 <>
     { editing ? 
       <>
-        <Register
-          {...user}
+      <TextC>
+        <ProfileForm
+          email={email}
           updateUser={updateUser} 
           setEdit={setEdit}
           id={id}
         />
-        <Button variant="warning" onClick={() => setEdit(false)}>Cancel</Button>
+        </TextC>
+        <Button variant="outline-danger" onClick={() => setEdit(false)}>Cancel</Button>
         <br />
       </>
       :
       <>
+      <Center>
          <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={image} />
       <Card.Body>
-        <Card.Title>User # {id} {fname} {lname}</Card.Title>
+        <Card.Title>User # {id}</Card.Title>
         <Card.Text>
-          Age: {age}
           <br />
           Email: {email}
-          <br />
-          Date Joined: {' '}
         </Card.Text>
         <Button 
-            variant="warning" 
+            variant="outline-danger"
             onClick={() => setEdit(true)}
           >Edit Profile</Button>
-          <Link to=
- '/api/auth/edit'>
-                    Profile
-                </Link>
+       
       </Card.Body>
     </Card>
+    </Center>
         </>
       }
     </>
