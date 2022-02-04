@@ -12,7 +12,6 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
 
   useEffect( () => {
     if (id) {
-
       setGear({ name, desc, price, model, condition, make, image, serial, bought, quantity, category})
     }
   }, [])
@@ -49,11 +48,11 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
       <Modal.Header>
       <Modal.Title>
       	<Header1>
-          <P2>
+          <P1>
 			<Font>
 			New Gear
 			</Font>
-      </P2>
+      </P1>
 		</Header1>
     </Modal.Title>
     </Modal.Header>

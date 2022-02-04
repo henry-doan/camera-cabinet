@@ -29,7 +29,7 @@ const Documents = ({ documents, getAllDocuments, addDocument, gearId }) => {
         // </>
             <>
             <br />
-            <Button variant="primary" onClick={() => setAdd(true)}>
+            <Button variant="outline-light" onClick={() => setAdd(true)}>
               Add Document
             </Button>
             <br />
@@ -47,7 +47,7 @@ const Documents = ({ documents, getAllDocuments, addDocument, gearId }) => {
                 />
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={() => setAdd(false)}>
+                <Button variant="outline-light" onClick={() => setAdd(false)}>
                   Close
                 </Button>
               </Modal.Footer>

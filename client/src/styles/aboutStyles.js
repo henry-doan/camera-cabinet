@@ -1,3 +1,4 @@
+import { Image } from 'react-bootstrap';
 import styled from 'styled-components';
 
 export const DarkBackground = styled.body`
@@ -28,9 +29,10 @@ export const Header1 = styled.div`
   font-size: 48px;
   font: Montserrat;
   margin: auto;
- width: 18%;
- padding: 10px;
+  margin-left: 515px ;
  font-weight: 700;
+ position: relative;
+ 
  
    
   `
@@ -74,6 +76,7 @@ export const Image1 = styled.div` {
   &:hover {
     transition: .5s ease;
     opacity: 90%;
+    
   } 
   &:hover ${Header1} {
     margin: auto;
@@ -91,16 +94,16 @@ export const Image1 = styled.div` {
 `
 
 export const Iborder = styled.div`
-float: left;
-width:  200px;
-height: 200px;
-object-fit: cover;
+${Image} {
+border: solid 2px red;
+border-radius: 50%
+}
 `
   
 
  export const TopMargin = styled.div`
  margin: 5rem auto;
- background: #292929;
+ align-items: center;
  `
 
 export const Middle = styled.div`
@@ -109,32 +112,3 @@ export const Middle = styled.div`
   opacity: 100%;
   text-color: #700000 ;
   `
-
-// export 
-
-// export const Container:hover .image {
-//   opacity: 0.3;
-// }
-
-// .container:hover .middle {
-//   opacity: 1;
-// }
-
-
-
-
-// <div class="container">
-//   <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
-//   <div class="middle">
-//     <div class="text">John Doe</div>
-//   </div>
-// </div>
-
-
-// border-radius: 50%;
-//   opacity: 1;
-//   display: block;
-//   width: 100%;
-//   height: auto;
-//   transition: .5s ease;
-// backface-visibility: hidden;

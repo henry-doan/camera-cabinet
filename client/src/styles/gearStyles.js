@@ -25,9 +25,6 @@ line-height: 64px;
 color: #FFFFFF;
 `
 
-export const Font = styled.div`
-  font-family: 'Montserrat', sans-serif;
-`
 
 
 export const Background = styled.div`
@@ -68,12 +65,6 @@ color: #FFFFFF;
 `
 
 export const Backdrop = styled("div")`
-// // position: center;
-// width: 1260px;
-// // height: 1763px;
-// // left: 90px;
-// // top: 224px;
-// // right: 90px;
 background: #3D3D3D;
 `
 // .full-screen-modal `
@@ -106,3 +97,28 @@ line-height: 25px;
 color: #E61F25;
 `
 
+export const BtnContainer = styled.div`
+  position: absolute;
+  top: 390px;
+  left: 300px;
+`
+
+export const ShowPara = styled.div`
+  position: relative;
+  left: 830px;
+  top: 100px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fe2712;
+`;
+
+export const ImgContainer = styled.div`
+  position: absolute;
+  left: 300px;
+  top: 100px;
+`;
+
+export const CompContainer = styled.div`
+  position: absolute;
+  top: 450px;
+  left: 300px;
+`

@@ -5,5 +5,5 @@ class Gear < ApplicationRecord
 
 
   validates :model, :make, :image, :category, presence: true
-  # validates :name, :desc, :price, :condition, :serial, :bought, :quanti
+
 end

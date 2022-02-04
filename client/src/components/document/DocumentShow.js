@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { DocumentConsumer } from '../../providers/DocumentProvider';
 import axios from 'axios';
 import { useParams, useLocation } from 'react-router-dom';
-import { Card, Button, Modal } from 'react-bootstrap';
+import { Card, Button, Modal, Image } from 'react-bootstrap';
 import DocumentForm from './DocumentForm';
 
 const DocumentShow = ({ updateDocument, deleteDocument }) => {
@@ -34,13 +34,12 @@ const DocumentShow = ({ updateDocument, deleteDocument }) => {
         </Card> */}
           <Card>
 						<Card.Header as="h5">Document</Card.Header>
+						<Card.Img src={image}/>
+
 						<Card.Body>
 							<Card.Title>{bought}</Card.Title>
-							<Card.Text>
-								{image}
-							</Card.Text>
 							<Button variant="primary" onClick={() => setEditing(true)}>Edit</Button>
-							<Button variant="primary" onClick={() => deleteDocument(state.kitId, params.gearsId, params.documentId)}>Delete</Button>
+							<Button variant="primary" onClick={() => deleteDocument(state.kitId, params.gearId, params.documentId)}>Delete</Button>
 
 							<Modal show={editing} onHide={() => setEditing(false)}>
 								<Modal.Header closeButton>

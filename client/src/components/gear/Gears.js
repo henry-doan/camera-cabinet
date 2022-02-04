@@ -7,12 +7,21 @@ import { useParams } from 'react-router-dom';
 import { Font } from '../../styles/gearStyles';
 
 const Gears = ({ gears, getAllGears, addGear, kitId }) => {
-  const [adding, setAdd] = useState(false)
+    const [adding, setAdd] = useState(false)
+
   const params = useParams()
-  const [setShow] = useState(false);
-  
+
+  useEffect( () => {
+    getAllGears(params.kitId)
+  }, [])
+
   return (
     <>
+			<Font>
+				<h1 style={{color: "white"}}>All Gear</h1>
+			</Font>
+
+			<GearList gears={gears} kitId={params.kitId} />
 
 			{ adding ?
 					<>
@@ -21,18 +30,14 @@ const Gears = ({ gears, getAllGears, addGear, kitId }) => {
 							kitId={params.kitId} 
 							setAdd={setAdd}
 						/>
-
+						<Button variant="outline-light" onClick={() => setAdd(false)}>Cancel</Button>    
 					</>
 						:
-            
-						<Button variant="primary" onClick={() => setAdd(true)}>Add Gear</Button>
-					
-  }
-			<GearList gears={gears} kitId={params.kitId} />
+						<Button variant="outline-light" onClick={() => setAdd(true)}>Add Gear</Button>
+			}
       </>
     )
 }
-
 
 const ConnectedGears = (props) => (
   <GearConsumer>

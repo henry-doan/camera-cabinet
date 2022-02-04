@@ -57,7 +57,7 @@ const KitForm = ({ addKit, id, name, description, image,/* item,  */updateKit, s
                   onChange={(e) => setKit({ ...kit, image: e.target.value })} 
                 />
               </Form.Group>
-              <Button variant="outline-danger" type="submit">
+              <Button variant="outline-light" type="submit">
                 Submit
               </Button>
             </Form>

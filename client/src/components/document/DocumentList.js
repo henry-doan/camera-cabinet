@@ -1,15 +1,18 @@
 import { ListGroup, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Font } from '../../styles/documentStyles';
 
 const DocumentList = ({ documents, gearId, kitId }) => (
         <>
-				<h1>All Documents</h1>
+				<Font>
+				All Documents
+				</Font>
 					<Container>
 						<ListGroup>
 								{ documents.map( d =>
 								<Link to={`/${gearId}/documents/${d.id}`}
 											state={{ kitId: kitId }}>
-										{d.image}
+										<img src={d.image} style={{ height: '200px'}}/>
 								</Link>
 								)}
 						</ListGroup>
