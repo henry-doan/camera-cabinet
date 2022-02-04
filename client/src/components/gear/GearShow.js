@@ -5,11 +5,12 @@ import { useParams } from 'react-router-dom';
 import { Image, Button, Modal } from 'react-bootstrap';
 import GearForm from './GearForm';
 import { Header1, Header3, Header4, Para1 } from '../../styles/kitStyles';
+import Documents from '../document/Documents'
 
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
-    const [gear, setGear] = useState({ name: '', desc:'', price: 0, model:'', condition:'', make:'', image: '', serial:''/*, category: ''*/, bought: '', quantity: ''})
+    const [gear, setGear] = useState({ name: '', desc:'', price: 0, model:'', condition:'', make:'', image: '', serial:'', category: '', bought: '', quantity: ''})
     const [editing, setEdit] = useState(false)
 
     useEffect(() =>{
@@ -18,7 +19,9 @@ const GearShow = ({ updateGear, deleteGear }) => {
     .catch( err => console.log(err))
     }, [])
 
-    const { name, desc, price, model, condition, make, image, serial, /*category*/ bought, quantity, id} = gear
+    
+
+    const { name, desc, price, model, condition, make, image, serial, category, bought, quantity, id} = gear
     return (
 
       <>
@@ -29,7 +32,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
         <Header4>condition: {condition}</Header4>
         <Header4>make: {make}</Header4>
         <Header4>serial: {serial}</Header4>
-        {/* <Header4>category: {category}</Header4> */}
+        <Header4>category: {category}</Header4>
         <Header4>bought: {bought}</Header4>
         <Header4>quantity: {quantity}</Header4>
         <Image src={image} style={{ width: '400px'}} />
@@ -37,13 +40,13 @@ const GearShow = ({ updateGear, deleteGear }) => {
       <Button variant="warning" onClick={() => setEdit(true)}>
         Edit
       </Button>
-      <Button variant="danger" onClick={() => deleteGear(params.kitId, params.gameId)}>
+      <Button variant="danger" onClick={() => deleteGear(params.kitId, params.gearId)}>
         Delete
       </Button>
       
+      <Documents gearId={params.gearId} />
 
-
-      <Modal show={editing} onHide={() => setEdit(false)}>
+      <Modal show={editing} onHide={() => setEdit(true)}>
         <Modal.Header closeButton>
           <Modal.Title>Editing</Modal.Title>
         </Modal.Header>

@@ -12,7 +12,6 @@ const GearForm = ({ kitId, id, setAdd, name, desc, price, model, condition, make
 
   useEffect( () => {
     if (id) {
-
       setGear({ name, desc, price, model, condition, make, image, serial, bought, quantity, category})
     }
   }, [])

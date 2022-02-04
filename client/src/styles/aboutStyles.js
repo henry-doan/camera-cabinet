@@ -1,3 +1,4 @@
+import { Image } from 'react-bootstrap';
 import styled from 'styled-components';
 
 export const DarkBackground = styled.body`
@@ -28,9 +29,10 @@ export const Header1 = styled.div`
   font-size: 48px;
   font: Montserrat;
   margin: auto;
- width: 18%;
- padding: 10px;
+  margin-left: 475px ;
  font-weight: 700;
+ position: relative;
+ 
  
    
   `
@@ -74,6 +76,7 @@ export const Image1 = styled.div` {
   &:hover {
     transition: .5s ease;
     opacity: 90%;
+    
   } 
   &:hover ${Header1} {
     margin: auto;
@@ -91,16 +94,16 @@ export const Image1 = styled.div` {
 `
 
 export const Iborder = styled.div`
-float: left;
-width:  200px;
-height: 200px;
-object-fit: cover;
+${Image} {
+border: solid 2px red;
+border-radius: 50%
+}
 `
   
 
  export const TopMargin = styled.div`
  margin: 5rem auto;
- background: #292929;
+ align-items: center;
  `
 
 export const Middle = styled.div`

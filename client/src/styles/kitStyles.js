@@ -43,8 +43,8 @@ export const Grid = styled.div`
 
   display: grid;
   grid-template-columns: 37% 37%;
-  width: 1120px;
-  height: 200px;
+  // width: 1120px;
+  // height: 200px;
   margin-left: 220px;
   margin-right: auto;
   justify-items: end;

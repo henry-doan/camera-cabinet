@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, } from 'react-bootstrap';
 
 const DocumentForm = ({ gearId, kitId, addDocument, id, bought, image, setEditing, setAdd, updateDocument}) => {
   const [document, setDocument] = useState({ bought: '', image: ''})
@@ -43,6 +43,9 @@ const DocumentForm = ({ gearId, kitId, addDocument, id, bought, image, setEditin
           required
           placeholder="image"
         />
+  
+
+       
        
         <Button type="submit" variant="primary" >Submit</Button>
       </Form>
