@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "react-dropdown-now": "^6.0.1"
+    "react-dropdown-now": "^6.0.1",
+    "serve": "^13.0.2"
   },
   "name": "camera-cabinet",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
@@ -10,11 +11,13 @@
     "lib": "lib",
     "test": "test"
   },
-  "devDependencies": {},
   "scripts": {
-    "build": "cd client && npm install --only=dev && npm install && npm run build && cd ..",
-    "deploy": "cp -a client/build/. public/",
-    "heroku-postbuild": "npm run build && npm run deploy && echo 'Client Built'"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
