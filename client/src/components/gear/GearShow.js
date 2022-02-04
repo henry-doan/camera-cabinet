@@ -9,7 +9,7 @@ import Documents from '../document/Documents';
 
 const GearShow = ({ updateGear, deleteGear }) => {
     const params = useParams()
-    const [gear, setGear] = useState({ name: '', desc:'', price: 0, model:'', condition:'', make:'', image: '', serial:''/*, category: ''*/, bought: '', quantity: ''})
+    const [gear, setGear] = useState({ name: '', desc:'', price: 0, model:'', condition:'', make:'', image: '', serial:'', category: '', bought: '', quantity: ''})
     const [editing, setEdit] = useState(false)
 
     useEffect(() =>{
@@ -47,7 +47,7 @@ const GearShow = ({ updateGear, deleteGear }) => {
         <Header4>condition: {condition}</Header4>
         <Header4>make: {make}</Header4>
         <Header4>serial: {serial}</Header4>
-        {/* <Header4>category: {category}</Header4> */}
+        <Header4>category: {category}</Header4>
         <Header4>bought: {bought}</Header4>
         <Header4>quantity: {quantity}</Header4>
         </Font>

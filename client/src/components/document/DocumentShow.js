@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { DocumentConsumer } from '../../providers/DocumentProvider';
 import axios from 'axios';
 import { useParams, useLocation } from 'react-router-dom';
-import { Card, Button, Modal } from 'react-bootstrap';
+import { Card, Button, Modal, Image } from 'react-bootstrap';
 import DocumentForm from './DocumentForm';
 
 const DocumentShow = ({ updateDocument, deleteDocument }) => {

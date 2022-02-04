@@ -10,6 +10,8 @@ const GearProvider = ({ children }) => {
 
   const navigate = useNavigate()
 
+  
+
   const getAllGears = (kitId) => {
     axios.get(`/api/kits/${kitId}/gears/`)
       .then( res => setGears(res.data))
@@ -18,6 +20,7 @@ const GearProvider = ({ children }) => {
 
   const addGear = (kitId, gear) => {
     axios.post(`/api/kits/${kitId}/gears`, { gear } )
+    // axios.post('/api/gears', { gear })
       .then ( res => setGears([...gears, res.data]))
       .catch( err => console.log(err))
   }
@@ -41,9 +44,12 @@ const GearProvider = ({ children }) => {
     axios.delete(`/api/kits/${kitId}/gears/${id}`)
       .then( res => {
         setGears(gears.filter( g => g.id !== id))
+        alert(res.data.message)
         navigate(`/kits/${kitId}`)
+        
       })
       .catch( err => console.log(err))
+      
   }
 
   return (

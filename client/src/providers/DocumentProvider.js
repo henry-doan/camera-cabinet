@@ -44,6 +44,7 @@ const DocumentProvider = ({ children }) => {
     axios.delete(`/api/gears/${gearId}/documents/${id}`)
       .then( res => {
         setDocuments(documents.filter( d => d.id !== id))
+        alert(res.data.message)
         navigate(`/${kitId}/gears/${gearId}`)
       })
       .catch( err => console.log(err))
