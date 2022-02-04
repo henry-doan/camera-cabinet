@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Image, Button, Row, Col } from 'react-bootstrap';
+import { Image, Button } from 'react-bootstrap';
 import KitForm from './KitForm';
 import { KitConsumer } from '../../providers/KitProvider';
 import Gears from '../gear/Gears';
@@ -44,8 +44,6 @@ return (
       </>
       :
       <>
-    
-      
         <ShowPara>
           <Header1>{name}</Header1>
           <Header3>Description: {description}</Header3>
@@ -54,10 +52,7 @@ return (
         <ImgContainer>
           <Image src={image} style={{ width: "400px"}}/>
         </ImgContainer>
-       
         <BtnContainer>
-          
-        <div>
           <Button 
             variant="outline-light" 
             onClick={() => setEdit(true)}
@@ -65,15 +60,12 @@ return (
             Edit
           </Button>
           
-          
           <Button 
             variant="outline-light"
             onClick={() => deleteKit(id)}
           >
             Delete
           </Button>
-          </div>
-        
         </BtnContainer>
       </>
       }

@@ -3,7 +3,7 @@ import { Header1, Font, Backdrop, P1, P2, P3, P4, P5, Container2,  } from '../..
 import { Form, Modal, Button, Container, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 
-const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, bought, quantity, category, setEdit, updateGear, addGear, /*category*/}) => {
+const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make, image, serial, bought, quantity, category, setEdit, updateGear, addGear}) => {
   
   const [gear, setGear] = useState({ name: '', desc: '', price: 0, model: '',
   condition: '', make: '', image: '', serial: '' , bought: '', quantity: '', category: ''})
@@ -27,7 +27,7 @@ const GearForm = ({kitId, id, setAdd, name, desc, price, model, condition, make,
     setAdd(false)
   }
     setGear({ name: '', desc: '', price: 0, model: '',
-    condition: '', make: '', image: '', serial: '', /*category: ''*/ bought: '', quantity: '', category: ''})
+    condition: '', make: '', image: '', serial: '', category: '', bought: '', quantity: ''})
   }
 
      const [show, setShow] = useState(false); 
